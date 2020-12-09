@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Caculator</h1>
+<table border="1">
+    <tr>
+        <td><input type="number" id="number1" value="gia tri a"></td>
+        <td><input type="number" id="number2" value="gia tri b"></td>
+        <td ><p id="result" style="width: 200px"></p> </td>
+    </tr>
+    <tr>
+        <button onclick="add()" value="add" >Addition(+)</button>
+        <button onclick="sub()" value="sub" >Subtraction(-)</button>
+        <button onclick="multi()" value="multi" >Multiplication(X)</button>
+        <button onclick="divi()" value="divi" >Divison(/)</button>
+    </tr>
+</table>
+</body>
+</html>
+<script>
+    let a=document.getElementById("number1");
+    let b=document.getElementById("number2");
+    let result;
+    function add() {
+        x=parseFloat(a.value);
+        y=parseFloat(b.value);
+        result=x+y
+        document.getElementById("result").innerHTML=result;
+    }
+    function sub() {
+        x=parseFloat(a.value);
+        y=parseFloat(b.value);
+        result=x-y;
+        document.getElementById("result").innerHTML=result;
+    }
+    function multi() {
+        x=parseFloat(a.value);
+        y=parseFloat(b.value);
+        result=x*y;
+        document.getElementById("result").innerHTML=result;
+    }
+    function divi() {
+        x=parseFloat(a.value);
+        y=parseFloat(b.value);
+        result=x/y;
+        document.getElementById("result").innerHTML=result;
+    }
+</script>
+</body>
+</html>

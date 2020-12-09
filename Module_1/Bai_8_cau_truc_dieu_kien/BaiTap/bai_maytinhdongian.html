@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Máy tính đơn giản</title>
+</head>
+<body>
+<table border="1" cellspacing="20px">
+    <tr>
+        <td colspan="4" style="height: 50px; "><span id='ket_qua'></span></td>
+    </tr>
+    <tr>
+        <td>
+            <button onclick="calbasic('1')">1</button>
+        </td>
+        <td>
+            <button onclick="calbasic('2')">2</button>
+        </td>
+        <td>
+            <button onclick="calbasic('3')">3</button>
+        </td>
+        <td>
+            <button onclick="calbasic('+')">+</button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button onclick="calbasic('4')">4</button>
+        </td>
+        <td>
+            <button onclick="calbasic('5')">5</button>
+        </td>
+        <td>
+            <button onclick="calbasic('6')">6</button>
+        </td>
+        <td>
+            <button onclick="calbasic('-')">-</button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button onclick="calbasic('7')">7</button>
+        </td>
+        <td>
+            <button onclick="calbasic('8')">8</button>
+        </td>
+        <td>
+            <button onclick="calbasic('9')">9</button>
+        </td>
+        <td>
+            <button onclick="calbasic('*')">*</button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button onclick="calbasic('C')">C</button>
+        </td>
+        <td>
+            <button onclick="calbasic('0')">0</button>
+        </td>
+        <td>
+            <button onclick="calbasic('=')">=</button>
+        </td>
+        <td>
+            <button onclick="calbasic('/')">/</button>
+        </td>
+    </tr>
+</table>
+<script>
+    function calbasic(operator){
+        let result = document.getElementById('ket_qua').innerText;
+        switch (operator) {
+            case '0':
+            case '1':
+            case '2':
+            case '3':
+            case '4':
+            case '5':
+            case '6':
+            case '7':
+            case '8':
+            case '9':
+            case '+':
+            case '-':
+            case '*':
+            case '/':
+
+                result = result + operator;
+                break;
+            case'=':
+                result = eval(result);
+                break;
+            case 'C':
+                result = '';
+                break;
+        }
+        document.getElementById('ket_qua').innerText = result;
+    }
+
+</script>
+</body>
+</html>

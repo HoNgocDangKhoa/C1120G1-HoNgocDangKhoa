@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Caculator</h1>
+<lable><input type="number" id="number1" value="gia tri a"></lable>
+<lable><input type="number" id="number2" value="gia tri b"></lable>
+
+<br>
+<button onclick="add()" value="add">addtion</button>
+<button onclick="sub()" value="sub">subtraction</button>
+<button onclick="multi()" value="multi">multipcation</button>
+<button onclick="div()" value="divi">division</button>
+<p id="ketqua"></p>
+<script>
+
+    let a = document.getElementById("number1");
+    let b = document.getElementById("number2");
+    let result;
+
+    function add(x, y) {
+        x = parseFloat(a.value);
+        y = parseFloat(b.value);
+        result = x + y
+        document.getElementById("ketqua").innerHTML = result;
+    }
+
+    function sub() {
+        x = parseInt(a.value);
+        y = parseInt(b.value);
+        result = x - y
+        document.getElementById("ketqua").innerHTML = result;
+    }
+
+    function multi() {
+        x = parseInt(a.value)
+        y = parseInt(b.value)
+        result = x * y
+        document.getElementById("ketqua").innerHTML = result
+    }
+
+    function div() {
+        x = parseInt(a.value)
+        y = parseInt(b.value)
+        result = x / y
+        document.getElementById("ketqua").innerHTML = result
+
+    }
+
+</script>
+</body>
+</html>
