@@ -6,24 +6,20 @@
 </head>
 <body>
 <script>
-    // let a=parseFloat(prompt('nhap canha'))
-    // let b=parseFloat(prompt('nhap canh b'))
-    // let c=parseFloat(prompt('nhap canh c'))
-    // if (a,b,c>o){
-    //     if(a+b>c){
-    //         if(b+c>a){
-    //            if(a+c>b){
-    //                alert("a,b,c la ba canh tam giac")
-    //            }
-    //             alert("a,b,c la ba canh tam giac")
-    //         }
-    //         alert("a,b,c la ba canh tam giac")
-    //     }
-    //     alert("a,b,c la ba canh tam giac")
-    // }else {
-    //     alert("ko phai")
-    // }
-
+    let a=parseFloat(prompt('nhap canha'))
+    let b=parseFloat(prompt('nhap canh b'))
+    let c=parseFloat(prompt('nhap canh c'))
+    if(a>0&&b>0&&c>0){
+        if (a+b>c){
+            if(b+c>a){
+                if(a+c>b){
+                    alert("a,b,c la ba canh tam giac");
+                }alert("a,b,c la ba canh tam giac")
+            }alert("a,b,c la ba canh tam giac")
+        }alert("a,b,c la ba canh tam giac")
+    }else {
+        alert("a,b,c ko phai la ba canh cua tam giac")
+    }
 
 
 
