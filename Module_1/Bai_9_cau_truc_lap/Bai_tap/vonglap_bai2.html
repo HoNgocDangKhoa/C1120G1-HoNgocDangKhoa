@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>nhap nhiet do</title>
+</head>
+<body>
+<script>
+    let flag = true;
+    do {
+        let a = parseFloat(prompt('nhap nhiet do'))
+        if (a > 20 && a < 100) {
+            alert('nhiet do thich hop');
+            flag =false;
+
+        } else if (a < 20) {
+            alert('hay tang nhiet do len');
+
+        } else {
+            alert('ha nhiet do xuong');
+        }
+
+
+    } while (flag);
+
+</script>
+
+</body>
+</html>

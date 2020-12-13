@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let input=parseInt(prompt('nhap n'));
+    let count=0;
+    let number=1;
+    let total=0;
+    while(count<input){
+
+            if(number%7===0){
+                count++;
+                total=total+number;
+            }
+        number++;
+    }document.write('tong '+input+' so chia het cho 7 la'+total)
+</script>
+</body>
+</html>

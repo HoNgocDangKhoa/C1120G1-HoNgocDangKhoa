@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let input=parseInt(prompt('nhap vao so'))
+    let a = 0;
+    let b = 1;
+    let c = a + b;
+    let count=0;
+    while (count<input) {
+        a = b;
+        b = c;
+        c = a + b
+        if(c%5===0){
+            count++;
+            document.write('so chia het cho 5  trong day fibonacci thu' + count+ 'la '+c+' <br>');
+        }
+
+    }
+</script>
+</body>
+</html>
