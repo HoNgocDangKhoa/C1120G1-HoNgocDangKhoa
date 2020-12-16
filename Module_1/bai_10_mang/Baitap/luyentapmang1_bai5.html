@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài 5</title>
+</head>
+<body>
+<script>
+    let a = [];
+    let count = 0;
+    let input = parseInt(prompt('nhập vào số phàn tử của mảng'))
+    for (let i = 0; i < input; i++) {
+        a[i] = prompt('hãy nhập phần tử thứ ' + i)
+        if (a[i] < 0) {
+            count++;
+
+            document.write(a[i] + 'là số nguyên âm thứ : ' + count + '<br>')
+        }
+
+    }
+    document.write('có ' + count + 'số nguyên âm');
+
+</script>
+</body>
+</html>

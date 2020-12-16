@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai 9</title>
+</head>
+<body>
+<script>
+    // let a=[1,3,5,7,9];
+    // let b=[2,4,6,8,10];
+    // let c=[20,19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1]
+    // let d=a.concat(b,c);
+    // document.write(d)
+    //khởi tạo
+    let a=[];
+    for (let i=0;i<5;i++){
+        a[i]=prompt('nhap phần tử thứ '+i+ 'của mảng a')
+    }
+    let b=[];
+    for(let j=0;j<5;j++){
+        b[j]=prompt('nhập phần tử thứ :'+j+ 'của mảng b')
+    }
+    let c=[];
+    for(let l=0;l<20;l++){
+        c[l]=prompt('nhập phần tử thứ :'+ l +'của mảng c')
+    }
+    let d=a.concat(b,c);
+    document.write('mảng mới là : ' + d)
+</script>
+</body>
+</html>

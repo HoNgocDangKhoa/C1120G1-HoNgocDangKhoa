@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>chen mot so bat kif vao mang</title>
+</head>
+<body>
+<script>
+    let a=[2,4,5,8,9,13,23,14];
+    let n=parseInt(prompt('nhap vi tri muon chen:'));
+    let input=parseInt(prompt('nhap gia tri muon chen vao:'));
+    for (let i=a.length;i>=n;i--){
+        a[i]=a[i-1]
+    }a[n-1]=input;
+    document.write('mang moi la:'+a)
+</script>
+</body>
+</html>

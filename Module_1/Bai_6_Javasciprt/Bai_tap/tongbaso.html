@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>Tong ba so</h1>
+<p>nhap a <input type="text" id="a"></p>
+<p>nhap b <input type="text" id="b"></p>
+<p> nhap c<input type="text" id="c"></p>
+
+<div id="messageDiv"></div>
+<button type="button" onclick="sum();">sum</button>
+<script>
+    function sum(a,b,c) {
+        return (a+b+c)
+        document.getElementById('messageDiv').innerHTML= sum(a.value,b.value, c.value) ;
+    }
+</script>
+
+
+<!--<div id="messageDiv"></div>-->
+<!--<button type="button" onclick="showMessage();">Click Me!</button>-->
+<!--<script>-->
+<!--    function showMessage(){-->
+<!--        document.getElementById('messageDiv').innerHTML = 'Xin chào!';-->
+<!--    }-->
+<!--</script>-->
+
+
+
+</body>
+</html>

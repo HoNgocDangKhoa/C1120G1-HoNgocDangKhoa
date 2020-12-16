@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>khoi tao</title>
+</head>
+<body>
+<script>
+
+    let number = parseInt(prompt('nhập số nguyên v :'))
+    let flag = false
+    let a = [1, 4, 5, 7, 8, 56, 78, 96, 39];
+    for (let i = 0; i < a.length; i++) {
+        if (number === a[i]) {
+            flag=true;
+        }
+    }
+
+    if (flag){
+        alert(number + ' is in the array');
+    } else {
+        alert(number + ' is not in the array')
+    }
+</script>
+</body>
+</html>

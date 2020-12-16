@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Từ điển</title>
+</head>
+<body>
+<input type="text" id="engligh" placeholder="engligh">
+<input type="text" id="vn" placeholder="tiếng việt">
+<input type="button" onclick="timkiem()" value="tìm kiếm">
+<script>
+    let input = prompt('nhap từ khoá càn tìm');
+    let a = ['music', 'sport', 'football', 'name',];
+    let b = ['âm nhạc', 'thể thao', 'đá bóng', 'tên'];
+    for (let i = 0; i < a.length; i++) {
+        if (a[i] === input) {
+            alert(b[i]);
+        }
+        else {
+            alert('không tìm thấy kết quả')}
+        }
+
+
+</script>
+</body>
+</html>

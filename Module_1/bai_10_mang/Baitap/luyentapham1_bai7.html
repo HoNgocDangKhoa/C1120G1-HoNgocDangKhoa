@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài7</title>
+</head>
+<body>
+<script>
+    let flag=false
+    let a=[1,5,23,54,69,8,92,3,21,4];
+    let v=parseInt(prompt('nhập số nguyên v'));
+    for(let i=0;i<a.length-1;i++){
+        if(v===a[i]){
+            for(let j=v;j<a.length;j++){
+                a[j]=a[j+1]
+            }
+        }
+    }
+    length-1=0
+  document.write(a)
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Caculator</h1>
+<td><input type="number" id="number" value=()/>
+<td><input type="number" id="number1" value=()/><br><br>
+    <input type="button" id="button" onclick="add()" value="Addition">
+    <input type="button" id="button1" onclick="tru()" value="Subtraction">
+    <input type="button" id="button2" onclick="nhan()" value="Multiplication">
+    <input type="button" id="button3" onclick="chia()" value="Division">
+    <p id="result"></p>
+    <script>
+        let a = document.getElementById("number");
+        let b = document.getElementById("number1");
+        let x, y;
+        let result;
+
+        function add() {
+            x = parseFloat(a.value);
+            y = parseFloat(b.value);
+            result = x + y;
+            document.getElementById("result").innerText = result
+        }
+
+        function tru() {
+            result = x - y;
+            document.getElementById("result").innerText = result
+        }
+
+        function nhan() {
+            result = x * y;
+            document.getElementById("result").innerText = result
+        }
+
+        function chia() {
+            result = x / y;
+            document.getElementById("result").innerText =result
+        }
+    </script>
+</body>
+</html>
