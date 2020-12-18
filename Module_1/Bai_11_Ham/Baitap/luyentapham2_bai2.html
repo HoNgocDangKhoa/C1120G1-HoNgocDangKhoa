@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài 2</title>
+</head>
+<body>
+<script>
+    let s;
+    let c;
+    let input = parseFloat(prompt('nhập bán kính hình tròn'));
+    document.write("diện tích hình tròn là :"+ acreage( input)+"<br>");
+    document.write("chu vi hình tròn là :"+ perimeter(input));
+    function acreage(a) {
+        s = a * 2 * Math.PI
+        return s.toFixed(2);
+    }
+
+    function perimeter(d) {
+        c = d * Math.PI
+        return c.toFixed(3);
+    }
+</script>
+</body>
+</html>

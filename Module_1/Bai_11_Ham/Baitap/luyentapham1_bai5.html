@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai 5</title>
+</head>
+<body>
+<script>
+    let flag = false;
+    let c = prompt('input name star');
+    let a = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+    let b = ["UrsaMinor", "Taurus", "Cygnus", "Lyra", "Aquila", "UrsaMajor", "Leo"];
+    nameStar(c);
+
+    function nameStar(c) {
+        let i;
+        for (i = 0; i < a.length; i++) {
+            if (c === a[i]) {
+                flag = true;
+                break;
+            }
+        }
+        if (flag) {
+            document.write(b[i])
+        } else {
+            document.write("ko tim thay ket qua")
+        }
+
+    }
+</script>
+</body>
+</html>
+<!--// document.write(b[i])-->
+<!--    }-->
+<!--    // if(flag){-->
+<!--    //     document.write(b[i])-->
+<!--    // }else {-->
+<!--    //     document.write("ko tim thay ket qua");-->
+<!--    // }-->
+<!--    // // else {-->
+<!--    //     document.write("ko tim thay ket qua")-->
+<!--    // }-->

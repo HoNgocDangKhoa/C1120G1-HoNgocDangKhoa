@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai 8</title>
+</head>
+<body>
+<script>
+    // Viết hàm truyền vào mảng số nguyên bất kỳ, sau đó đảo ngược mảng số nguyên đó.
+    let array1 = [];
+    let number = parseInt(prompt("nhap so phan tu trong mang"))
+
+    for (let i = 0; i < number; i++) {
+        array1[i] = parseInt(prompt('nhâp phan tử thứ :' + i));
+    }
+    revers(array1);
+
+    function revers(array) {
+        array.reverse();
+        document.write(array)
+    }
+</script>
+</body>
+</html>

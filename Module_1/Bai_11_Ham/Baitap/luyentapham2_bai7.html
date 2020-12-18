@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai 7</title>
+</head>
+<body>
+<script>
+    // Viết hàm truyền vào 2 số nguyên bất kì, thực hiện đổi chỗ hai số nguyên đó
+    function thayThe(numberA, numberB) {
+        let array = [numberA, numberB]
+        let temp;
+        temp = array[0];
+        array[0] = array[1];
+        array[1] = temp;
+        return array[0] + " - " + array[1];
+    }
+
+    let number = parseInt(prompt(''));
+    let number1 = parseInt(prompt(''));
+    document.write(thayThe(number, number1));
+
+</script>
+</body>
+</html>
