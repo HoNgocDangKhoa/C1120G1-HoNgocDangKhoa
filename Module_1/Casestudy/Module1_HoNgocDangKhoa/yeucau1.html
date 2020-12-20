@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>yeucau1</title>
+</head>
+<body>
+<script>
+    let name;
+    let cmnd;
+    let birthday;
+    let email;
+    let address;
+    let typeService;
+    let typeRoom;
+    let typeCustomer;
+    let discount;
+    let quantityIncluded;
+    let rentsDay;
+    let totalPay;
+
+    name = prompt('input name');
+    cmnd = prompt('input cmnd');
+    birthday = prompt('input birthday');
+    email = prompt('input email');
+    address = prompt('input address');
+    typeService = prompt('input typeService');
+    typeRoom = prompt('input typeRoom');
+    typeCustomer = prompt('input typeCustomer');
+    discount = prompt('input discount');
+    quantityIncluded = prompt('input quantityIncluded');
+    rentsDay = prompt('input rentsDay');
+    totalPay=500*rentsDay*(1-discount/100);
+
+    alert("Tên : "+name+"\n"+
+        "cmnd : "+cmnd+"\n"+
+        "Ngày sinh :" +birthday+"\n"+
+        "email : "+ email+"\n"+
+        "Địa chỉ : "+address+"\n"+
+        "Loại dịch vụ : "+typeService+"\n"+
+        "Loại phòng : "+typeRoom+"\n"+
+        "Loại Customer : "+typeCustomer+"\n"+
+        "Giảm giá : "+discount+"\n"+
+        "Số lượng đi kèm : "+quantityIncluded+"\n"+
+        "Ngày thuê : "+rentsDay+"\n"+
+        "Giá tiền : "+totalPay+"\n")
+
+</script>
+</body>
+</html>
