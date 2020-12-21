@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class myDate{
+        constructor(day,month,year) {
+            this.day=day;
+            this.month=month;
+            this.year=year;
+        }
+        Date(){
+            document.write(this.day + "/" + this.month + "/" + this.year);
+        }
+        getDay(){
+            document.write("Today is:"+ this.day);
+        }
+        getMonth(){
+            document.write("This month is:"+ this.month);
+        }
+        getYear(){
+            document.write("This year is:"+ this.year);
+        }
+        setDay(){
+            document.write("Day changed:"+ this.day)
+         }
+        setMonth(){
+            document.write("Month changed:"+ this.month)
+        }
+        setYear(){
+            document.write("Yeaar changed:"+ this.year)
+        }
+
+    }
+    let today= new myDate(20,"Dec",2020)
+    today.Date();
+    today.getDay();
+    today.getMonth();
+    today.getYear();
+    let change= new myDate(25,"Jan",2021)
+    change.setDay();
+    change.setMonth();
+    change.setYear();
+
+
+</script>
+</body>
+</html>

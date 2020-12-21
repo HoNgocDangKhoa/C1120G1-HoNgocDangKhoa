@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Temperature{
+        constructor(C) {
+            this.C=C;
+        }
+        CsangF(){
+            document.write("độ F là : "+((this.C*9/5)+32)+"<br>")
+        }
+        CsangKenvin(){
+            let K= this.C+273;
+            document.write("độ K là :"+ K)
+        }
+    }
+    let chuyendoi=new Temperature(25);
+    chuyendoi.CsangF();
+    chuyendoi.CsangKenvin();
+</script>
+</body>
+</html>

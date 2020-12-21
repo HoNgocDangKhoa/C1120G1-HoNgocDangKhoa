@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hinh chu nhat</title>
+</head>
+<body>
+<canvas id="chunhat" width="500" height="500"></canvas>
+
+<script>
+
+
+    class Rectangle {
+        constructor(dai, rong) {
+            this.dai = dai;
+            this.rong = rong;
+        }
+
+        getArea() {
+            return ("Diện tích là : " + this.dai * this.rong )
+
+        }
+
+        getChuvi() {
+            return ("Chu vi là : " + (this.dai + this.rong) * 2);
+        }
+
+        Draw() {
+            let vehcn = document.getElementById("chunhat");
+            let context = vehcn.getContext("2d");
+            context.rect(100, 100, this.dai, this.rong);
+            context.stroke();
+            context.fillStyle = "#FFFF2C99";
+            context.fill();
+
+        }
+
+    }
+
+    let hcn = new Rectangle(300, 200);
+    hcn.Draw();
+    document.write(hcn.getArea());
+    document.write(hcn.getChuvi());
+</script>
+</body>
+</html>

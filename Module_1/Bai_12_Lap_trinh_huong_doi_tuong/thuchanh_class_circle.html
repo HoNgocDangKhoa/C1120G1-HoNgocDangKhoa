@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Circle {
+        constructor(radius, color) {
+            this.radius = radius;
+            this.color = color;
+        }
+
+        Circle() {
+
+        }
+
+        getRadius() {
+            document.write(" Ban kinh cua hinh tron:" + this.radius)
+        }
+
+        getArea() {
+            let S = Math.PI * this.radius * this.radius;
+            document.write("dien tich hinh tron la :" + S)
+        }
+    }
+    let khoa =new Circle(25,"red");
+    khoa.getRadius();
+    khoa.getArea();
+
+
+</script>
+</body>
+</html>
