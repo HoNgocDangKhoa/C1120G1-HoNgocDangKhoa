@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yeu cau 5</title>
+</head>
+<body>
+<input type="button" onclick="displayMainMenu()" value="Menu">
+<table id="dungvaomaditu" border="1">
+
+</table>
+<script>
+
+    function displayMainMenu() {
+        let a = prompt("1.Add New Customer." + '\n' +
+            "2.Display Information Customer." + '\n' +
+            "3.Edit Information Customer." + '\n' +
+            "4.Delete Customer." + '\n' +
+            "5.Exit.")
+
+
+        switch (a * 1) {
+            case 1 : {
+                addNewCustomer();
+                break;
+            }
+            case 2: {
+                displayCustomer();
+                break;
+            }
+            case 3: {
+                editCustomer();
+                break;
+            }
+            case 4:{
+                deleteCustomer();
+                break;
+            }
+            case 5:{
+                exit();
+                break;
+            }
+
+        }
+    }
+
+    let custom = [];
+    let arrListCustomers = [];
+    let i
+    let name;
+    let cmnd;
+    let birthday;
+    let email;
+    let address;
+    let typeService;
+    let typeRoom;
+    let typeCustomer;
+    let discount;
+    let quantityIncluded;
+    let rentsDay;
+
+    function addNewCustomer() {
+        name = prompt('input name');
+        custom.push(name)
+        cmnd = prompt('input cmnd');
+        custom.push(cmnd)
+        birthday = prompt('input birthday');
+        custom.push(birthday)
+        email = prompt('input email');
+        custom.push(email)
+        address = prompt('input address');
+        custom.push(address)
+        typeService = prompt('input typeService');
+        custom.push(typeService)
+        typeRoom = prompt('input typeRoom');
+        custom.push(typeRoom)
+        typeCustomer = prompt('input typeCustomer');
+        custom.push(typeCustomer)
+        discount = prompt('input discount');
+        custom.push(discount)
+        quantityIncluded = prompt('input quantityIncluded');
+        custom.push(quantityIncluded)
+        rentsDay = prompt('input rentsDay');
+        custom.push(rentsDay);
+        arrListCustomers.push(custom)
+        displayMainMenu()
+
+
+    }
+
+    function displayCustomer() {
+        let bangChuoi =
+            '    <tr>\n' +
+            '<th>Stt</th>\n' +
+            '<th>Họ Tên</th>\n' +
+            '<th>Cmnd</th>\n' +
+            '<th>Ngày sinh</th>\n' +
+            '<th>Email</th>\n' +
+            '<th>Địa chỉ</th>\n' +
+            '<th>Loại dịch vụ</th>\n' +
+            '<th>Loại phòng</th>\n' +
+            '<th>Loại khách hàng</th>\n' +
+            '<th>Giảm giá</th>\n' +
+            '<th>Số lượng đi kèm</th>\n' +
+            '<th>Ngày thuê</th>\n' +
+            '</tr>';
+        for (i = 0; i < arrListCustomers.length; i++) {
+            bangChuoi += '    <tr>\n' +
+                '<td>' + (i + 1) + '</td>\n' +
+                '<td>' + arrListCustomers[i][0] + '</td>\n' +
+                '<td>' + arrListCustomers[i][1] + '</td>\n' +
+                '<td>' + arrListCustomers[i][2] + '</td>\n' +
+                '<td>' + arrListCustomers[i][3] + '</td>\n' +
+                '<td>' + arrListCustomers[i][4] + '</td>\n' +
+                '<td>' + arrListCustomers[i][5] + '</td>\n' +
+                '<td>' + arrListCustomers[i][6] + '</td>\n' +
+                '<td>' + arrListCustomers[i][7] + '</td>\n' +
+                '<td>' + arrListCustomers[i][8] + '</td>\n' +
+                '<td>' + arrListCustomers[i][9] + '</td>\n' +
+                '<td>' + arrListCustomers[i][10] + '</td>\n' +
+                '</tr>';
+        }
+
+        document.getElementById("dungvaomaditu").innerHTML = bangChuoi;
+    }
+
+    function editCustomer() {
+        let a=prompt("nhập số thứ tự khách hnahg bạn muốn sửa");
+        if(a>arrListCustomers.length) {
+            alert("không nằm trong danh sách");
+            editCustomer();
+        }
+
+        let edit = parseInt(prompt("1.Tên : " + name + '\n' +
+            "2.cmnd : " + cmnd + '\n' +
+            "3.Ngày sinh : " + birthday + '\n' +
+            "4.email :" + email + '\n' +
+            "5.Địa chỉ :" + address + '\n' +
+            "6.Loại dịch vụ :" + typeService + '\n' +
+            "7.Loại phòng :" + typeRoom + '\n' +
+            "8.Loại Customer :" + typeCustomer + '\n' +
+            "9.Giảm giá :" + discount + '\n' +
+            "10.Số lượng đi kèm :" + quantityIncluded + '\n' +
+            "11.Số ngày :" + rentsDay + '\n'));
+        switch (edit) {
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+            case 5:
+            case 6:
+            case 7:
+            case 8:
+            case 9:
+            case 10:
+            case 11:
+                sua(a-1,edit-1);
+        }
+
+    }
+function sua(x,y) {
+        let b =prompt("hãy nhập nội dung bạn muốn sửa")
+    arrListCustomers[x].splice(y,1,b);
+    displayCustomer();
+
+}
+function deleteCustomer () {
+        let a=parseInt(prompt("nhập số thứ tự khách hàng bạn muốn xoá"));
+        if(a>arrListCustomers.length){
+            alert("khách hằng ko có trong danh sách");
+            displayCustomer();
+        }
+    arrListCustomers.splice(a-1,1);
+    displayCustomer();
+}
+function exit() {
+        let dong=confirm("bạn có muốn đóng chương trình ko");
+        window.close(dong);
+}
+
+</script>
+</body>
+</html>
