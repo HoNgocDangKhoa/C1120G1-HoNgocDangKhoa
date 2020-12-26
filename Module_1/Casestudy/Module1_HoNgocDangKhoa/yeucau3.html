@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,7 +23,7 @@
     let flag = false;
     let tempName = "";
 
-
+while (true) {
     name = prompt('input name');
     name = name.trim().toLowerCase();
     for (let i = 0; i < name.length; i++) {
@@ -134,13 +136,12 @@
             tempCustomer += typeCustomer.charAt(i).toUpperCase();
             continue;
         }
-        tempCustomer+=typeCustomer.charAt(i)
+        tempCustomer += typeCustomer.charAt(i)
     }
-    typeCustomer=tempCustomer;
+    typeCustomer = tempCustomer;
 
 
     discount = prompt('input discount');
-
 
 
     do {
@@ -172,18 +173,18 @@
         }
     } while (!flag)
     flag = false;
-    alert("Tên : "+name+"\n"+
-        "cmnd : "+cmnd+"\n"+
-        "Ngày sinh :" +birthday+"\n"+
-        "email : "+ email+"\n"+
-        "Địa chỉ : "+address+"\n"+
-        "Loại dịch vụ : "+typeService+"\n"+
-        "Loại phòng : "+typeRoom+"\n"+
-        "Loại Customer : "+typeCustomer+"\n"+
-        "Giảm giá : "+discount+"\n"+
-        "Số lượng đi kèm : "+quantityIncluded+"\n"+
-        "Ngày thuê : "+rentsDay+"\n")
-
+    alert("Tên : " + name + "\n" +
+        "cmnd : " + cmnd + "\n" +
+        "Ngày sinh :" + birthday + "\n" +
+        "email : " + email + "\n" +
+        "Địa chỉ : " + address + "\n" +
+        "Loại dịch vụ : " + typeService + "\n" +
+        "Loại phòng : " + typeRoom + "\n" +
+        "Loại Customer : " + typeCustomer + "\n" +
+        "Giảm giá : " + discount + "\n" +
+        "Số lượng đi kèm : " + quantityIncluded + "\n" +
+        "Ngày thuê : " + rentsDay + "\n")
+}
 </script>
 </body>
 </html>

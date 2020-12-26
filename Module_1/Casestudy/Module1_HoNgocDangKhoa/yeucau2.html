@@ -29,150 +29,146 @@
     let discount = parseInt(prompt("enter discount"));
     let quantityIncluded = parseInt(prompt("enter "));
     let rentsDay = parseInt(prompt("enter rentsDay"));
-    let hienthi = parseInt(prompt("1.Hiển thị thông tin khách hàng." + "\n" +
-        "2.Chỉnh sửa thông tin khách hàng." + "\n" +
-        "3.Hiển thị số tiền sau khi được giảm giá."));
-    switch (hienthi) {
-        case 1: {
-            //     name = prompt("enter name");
-            //     cmnd = parseInt(prompt("enter cmnd"));
-            //     birthday = parseInt(prompt("enter birthday"));
-            //     email = prompt("enter email");
-            //     address =prompt("enter address");
-            //     typeService =prompt("enter service");
-            //     typeRoom = prompt("enter room");
-            //     typeCustomer = prompt("enter customer");
-            //     discount =parseInt(prompt("enter discount"));
-            //     quantityIncluded = parseInt(prompt("enter "));
-            //     rentsDay = parseInt(prompt("enter rentsDay"));
+    let flag=true;
+    while (flag) {
+        let hienthi = parseInt(prompt("1.Hiển thị thông tin khách hàng." + "\n" +
+            "2.Chỉnh sửa thông tin khách hàng." + "\n" +
+            "3.Hiển thị số tiền sau khi được giảm giá."+ "\n"+
+        "4.exit"  ));
+        switch (hienthi) {
+            case 1: {
 
 
-            alert("Tên : " + name + '\n' +
-                "cmnd : " + cmnd + '\n' +
-                "Ngày sinh : " + birthday + '\n' +
-                "email :" + email + '\n' +
-                "Địa chỉ :" + address + '\n' +
-                "Loại dịch vụ :" + typeService + '\n' +
-                "Loại phòng :" + typeRoom + '\n' +
-                "Loại Customer :" + typeCustomer + '\n' +
-                "Giảm giá :" + discount + '\n' +
-                "Số lượng đi kèm :" + quantityIncluded + '\n' +
-                "Số ngày :" + rentsDay + '\n');
-            break
-        }
-        case 2: {
-            let edit = parseInt(prompt("1.Tên : " + name + '\n' +
-                "2.cmnd : " + cmnd + '\n' +
-                "3.Ngày sinh : " + birthday + '\n' +
-                "4.email :" + email + '\n' +
-                "5.Địa chỉ :" + address + '\n' +
-                "6.Loại dịch vụ :" + typeService + '\n' +
-                "7.Loại phòng :" + typeRoom + '\n' +
-                "8.Loại Customer :" + typeCustomer + '\n' +
-                "9.Giảm giá :" + discount + '\n' +
-                "10.Số lượng đi kèm :" + quantityIncluded + '\n' +
-                "11.Số ngày :" + rentsDay + '\n'));
-            switch (edit) {
-                case 1: {
-                    name = prompt("enter name");
-                    break;
-                }
-                case 2: {
-                    birthday = prompt("enter birthday");
-                    break;
-
-                }
-                case 3: {
-                    cmnd = prompt("enter cmnd");
-                    break;
-                }
-                case 4: {
-                    email = prompt("enter email");
-                    break;
-
-                }
-                case 5: {
-                    address = prompt("enter address");
-                    break;
-                }
-                case 6: {
-                    typeService = prompt("enter typeService");
-                    break;
-
-                }
-                case 7: {
-                    typeRoom = prompt("enter room");
-                    break;
-                }
-                case 8: {
-                    typeCustomer = prompt("enter customer");
-                    break;
-
-                }
-                case 9: {
-                    discount = prompt("enter discount");
-                    break;
-                }
-                case 10: {
-                    quantityIncluded = prompt("enter quantityIncluded");
-                    break;
-
-                }
-                case 11: {
-                    rentsDay = prompt("enter rentsday");
-                    break;
-                }
+                alert("Tên : " + name + '\n' +
+                    "cmnd : " + cmnd + '\n' +
+                    "Ngày sinh : " + birthday + '\n' +
+                    "email :" + email + '\n' +
+                    "Địa chỉ :" + address + '\n' +
+                    "Loại dịch vụ :" + typeService + '\n' +
+                    "Loại phòng :" + typeRoom + '\n' +
+                    "Loại Customer :" + typeCustomer + '\n' +
+                    "Giảm giá :" + discount + '\n' +
+                    "Số lượng đi kèm :" + quantityIncluded + '\n' +
+                    "Số ngày :" + rentsDay + '\n');
+                break
             }
-            alert("Tên : " + name + '\n' +
-                "cmnd : " + cmnd + '\n' +
-                "Ngày sinh : " + birthday + '\n' +
-                "email :" + email + '\n' +
-                "Địa chỉ :" + address + '\n' +
-                "Loại dịch vụ :" + typeService + '\n' +
-                "Loại phòng :" + typeRoom + '\n' +
-                "Loại Customer :" + typeCustomer + '\n' +
-                "Giảm giá :" + discount + '\n' +
-                "Số lượng đi kèm :" + quantityIncluded + '\n' +
-                "Số ngày :" + rentsDay + '\n');
-            break;
-        }
-        case 3: {
-            let money = 0;
-            if (typeService === "Villa") {
-                money = 500;
-            } else if (typeService === "House") {
-                money = 300;
-            } else if (typeService === "Room") {
-                money = 100;
+            case 2: {
+                let edit = parseInt(prompt("1.Tên : " + name + '\n' +
+                    "2.cmnd : " + cmnd + '\n' +
+                    "3.Ngày sinh : " + birthday + '\n' +
+                    "4.email :" + email + '\n' +
+                    "5.Địa chỉ :" + address + '\n' +
+                    "6.Loại dịch vụ :" + typeService + '\n' +
+                    "7.Loại phòng :" + typeRoom + '\n' +
+                    "8.Loại Customer :" + typeCustomer + '\n' +
+                    "9.Giảm giá :" + discount + '\n' +
+                    "10.Số lượng đi kèm :" + quantityIncluded + '\n' +
+                    "11.Số ngày :" + rentsDay + '\n'));
+                switch (edit) {
+                    case 1: {
+                        name = prompt("enter name");
+                        break;
+                    }
+                    case 2: {
+                        birthday = prompt("enter birthday");
+                        break;
+
+                    }
+                    case 3: {
+                        cmnd = prompt("enter cmnd");
+                        break;
+                    }
+                    case 4: {
+                        email = prompt("enter email");
+                        break;
+
+                    }
+                    case 5: {
+                        address = prompt("enter address");
+                        break;
+                    }
+                    case 6: {
+                        typeService = prompt("enter typeService");
+                        break;
+
+                    }
+                    case 7: {
+                        typeRoom = prompt("enter room");
+                        break;
+                    }
+                    case 8: {
+                        typeCustomer = prompt("enter customer");
+                        break;
+
+                    }
+                    case 9: {
+                        discount = prompt("enter discount");
+                        break;
+                    }
+                    case 10: {
+                        quantityIncluded = prompt("enter quantityIncluded");
+                        break;
+
+                    }
+                    case 11: {
+                        rentsDay = prompt("enter rentsday");
+                        break;
+                    }
+                }
+                alert("Tên : " + name + '\n' +
+                    "cmnd : " + cmnd + '\n' +
+                    "Ngày sinh : " + birthday + '\n' +
+                    "email :" + email + '\n' +
+                    "Địa chỉ :" + address + '\n' +
+                    "Loại dịch vụ :" + typeService + '\n' +
+                    "Loại phòng :" + typeRoom + '\n' +
+                    "Loại Customer :" + typeCustomer + '\n' +
+                    "Giảm giá :" + discount + '\n' +
+                    "Số lượng đi kèm :" + quantityIncluded + '\n' +
+                    "Số ngày :" + rentsDay + '\n');
+                break;
             }
-            let sale = 0;
-            if (address === "Đà Nẵng") {
-                sale += 30;
-            } else if (address === "Huế") {
-                sale += 20;
-            } else if (address === "Quảng Nam") {
-                sale += 10;
+            case 3: {
+                let money = 0;
+                if (typeService === "Villa") {
+                    money = 500;
+                } else if (typeService === "House") {
+                    money = 300;
+                } else if (typeService === "Room") {
+                    money = 100;
+                }
+                let sale = 0;
+                if (address === "Đà Nẵng") {
+                    sale += 30;
+                } else if (address === "Huế") {
+                    sale += 20;
+                } else if (address === "Quảng Nam") {
+                    sale += 10;
+                }
+                if (rentsDay > 7) {
+                    sale += 30;
+                } else if (rentsDay > 5) {
+                    sale += 20;
+                } else if (rentsDay > 2) {
+                    sale += 10;
+                }
+                if (typeCustomer === "Diamond") {
+                    sale += 15;
+                } else if (typeCustomer === " Platium ") {
+                    sale += 10;
+                } else if (typeCustomer === "Gold") {
+                    sale += 5;
+                } else if (typeCustomer === "Silver") {
+                    sale += 2;
+                } else if (typeCustomer === "Member") {
+                    sale += 0;
+                }
+                alert("Tổng tiền là :" + (money * rentsDay - sale));
+                break;
             }
-            if (rentsDay > 7) {
-                sale += 30;
-            } else if (rentsDay > 5) {
-                sale += 20;
-            } else if (rentsDay > 2) {
-                sale += 10;
-            }
-            if (typeCustomer === "Diamond") {
-                sale += 15;
-            } else if (typeCustomer === " Platium ") {
-                sale += 10;
-            } else if (typeCustomer === "Gold") {
-                sale += 5;
-            } else if (typeCustomer === "Silver") {
-                sale += 2;
-            } else if (typeCustomer === "Member") {
-                sale += 0;
-            }
-            alert("Tổng tiền là :" + (money * rentsDay - sale));
-            break;
+            case 4:
+                flag=false;
+                break;
         }
     }
 </script>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>task2</title>
+</head>
+<body>
+<script>
+
+
+
+
+
+
+    class Employee {
+        constructor(name, birthday, id, sdt, email, level, position) {
+            this.name = name;
+            this.birthday = birthday;
+            this.id = id;
+            this.sdt = sdt;
+            this.email = email;
+            this.level = level;
+            this.position = position;
+
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        setName(name) {
+            this.name = name;
+        }
+
+        getBirthday() {
+            return this.birthday;
+        }
+
+        setBirthday(day) {
+            this.birthday = day;
+        }
+
+        getId() {
+            return this.id
+        }
+
+        setId(id) {
+            this.id = id;
+        }
+
+        getSdt() {
+            return this.sdt;
+        }
+
+        setSdt(sdt) {
+            this.name = sdt;
+        }
+
+        getEmail() {
+            return this.email;
+        }
+
+        setEmail(email) {
+            this.email = email;
+        }
+
+        getLevel() {
+            return this.level
+        }
+
+        setLevel(level) {
+            this.level = level;
+        }
+
+        getPosition() {
+            return this.position;
+        }
+
+        setPosition(position) {
+            this.position = position;
+        }
+
+        salaryEmployees() {
+            let salary = 0;
+            if (this.getPosition() === "Manager") {
+                salary = 500;
+            }
+            if (this.getPosition() === "Sale") {
+                salary = 300;
+            }
+            if (this.getPosition() === "Marketing") {
+                salary = 200;
+            }
+            return salary;
+        }
+
+
+    }
+    let name;
+    let birthday;
+    let id;
+    let sdt;
+    let email;
+    let level;
+    let position;
+    let listEmployees = [];
+    let flag = true;
+    let employee;
+
+
+    function addNewEmployee() {
+        name = prompt("Nhập tên");
+        birthday = prompt('Nhập ngày sinh');
+        id = prompt("Nhập id");
+        sdt = prompt("Nhập sdt");
+        email = prompt('Nhập email');
+        level = prompt("Nhập trình độ");
+        position = prompt("Nhập vị trí");
+        employee = new Employee(name, birthday, id, sdt, email, level, position);
+        listEmployees.push(employee)
+    };
+
+    function displayEmployee() {
+        let dsEmlloyee = "";
+        for (let i = 0; i < listEmployees.length; i++) {
+            dsEmlloyee += (i+1) + ".Họ và tên : " + listEmployees[i].name + ' | ' + "Ngày sinh : "+listEmployees[i].birthday+'\n'
+        }
+        let chon = parseInt(prompt(dsEmlloyee));
+        alert("1.Họ và tên : " + listEmployees[chon - 1].name + '\n' + "2.Ngày sinh : " + listEmployees[chon - 1].birthday + '\n' +
+            "3.Id : " + listEmployees[chon - 1].id + '\n' + "4.Số điện thoại : " + listEmployees[chon - 1].sdt + '\n' +
+            "5.Email : " + listEmployees[chon - 1].email + '\n' + "6.Trình độ : " + listEmployees[chon - 1].level + '\n' +
+            "7.Vị trí : " + listEmployees[chon - 1].position)
+
+    }
+
+    function salaryEmployees() {
+        let dsEmlloyee = "";
+        for (let i = 0; i < listEmployees.length; i++) {
+            dsEmlloyee += (i + 1) + "1.Họ và tên" + listEmployees[i].name + '\n'
+        }
+        let chon = parseInt(prompt(dsEmlloyee));
+        alert("Mức lương :" + listEmployees[chon - 1].salaryEmployees());
+    }
+    function eXit() {
+        let dong=confirm("bạn có chắc chắn muốn đóng không ");
+        flag=false;
+        window.close(dong);
+
+    }
+
+     do {
+         let a = prompt("1.Add new Employees" + '\n' +
+             "2.Display information Employees" + '\n' +
+             "3.Salary of Employees" + '\n' +
+             "4.Exit");
+
+
+         switch (a) {
+             case '1': {
+                 addNewEmployee();
+                 break;
+             }
+             case '2': {
+                 displayEmployee();
+                 break;
+             }
+             case '3': {
+                 salaryEmployees();
+                 break
+             }
+             case '4': {
+                 eXit();
+                 break
+             }
+
+         }
+     }while (flag);
+
+</script>
+</body>
+</html>

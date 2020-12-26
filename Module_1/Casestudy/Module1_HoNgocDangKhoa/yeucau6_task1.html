@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yêu cầu 6</title>
+</head>
+<body>
+<script>
+
+
+    class Customer {
+        constructor(name, cmnd, birthday, email, address, typeService, typeRoom, typeCustomer, discount, quantityIncluded, rentsDay) {
+            this.name = name;
+            this.cmnd = cmnd;
+            this.birthday = birthday;
+            this.email = email;
+            this.address = address;
+            this.typeService = typeService;
+            this.typeRoom = typeRoom;
+            this.typeCustomer = typeCustomer;
+            this.discount = discount;
+            this.quantityIncluded = quantityIncluded;
+            this.rentsDay = rentsDay;
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        setName(name) {
+            this.name = name;
+        }
+
+        getCmnd() {
+            return this.cmnd;
+        }
+
+        setCmnd(cmnd) {
+            this.cmnd = cmnd;
+        }
+
+        getBirthday() {
+            return this.birthday;
+        }
+
+        setBirthday(day) {
+            this.birthday = day;
+        }
+
+        getEmail() {
+            return this.email;
+        }
+
+        setEmail(email) {
+            this.email = email;
+        }
+
+        getAddress() {
+            return this.address;
+        }
+
+        setAddress(address) {
+            this.address = address;
+        }
+
+        getSerVice() {
+            return this.typeService;
+        }
+
+        setSerVice(typeService) {
+            this.typeService = typeService;
+        }
+
+        getTypeRoom() {
+            return this.typeRoom;
+        }
+
+        setTypeRoom(room) {
+            this.typeRoom = room;
+        }
+
+        getTypeCustomer() {
+            return this.typeCustomer;
+        }
+
+        setTypeCustomer(customer) {
+            this.typeCustomer = customer;
+        }
+
+        getDiscount() {
+            return this.discount;
+        }
+
+        setDiscount(discount) {
+            this.discount = discount;
+        }
+
+        getQuantityIncluded() {
+            return this.quantityIncluded;
+        }
+
+        setQuantityIncluded(included) {
+            this.quantityIncluded = included;
+        }
+
+        getRentsDay() {
+            return this.rentsDay;
+        }
+
+        setRentsDay(rentsDay) {
+            this.rentsDay = rentsDay;
+        }
+
+        billMoney() {
+            let priceService = 0;
+
+            if (this.getSerVice() === "Villa") {
+                priceService = 500;
+            } else if (this.getSerVice() === "House") {
+                priceService = 300;
+            } else if (this.getSerVice() === "Room") {
+                priceService = 100;
+            }
+
+            return priceService * this.getRentsDay() * (1 - this.discount / 100);
+
+        }
+    }
+
+    let name;
+    let cmnd;
+    let birthday;
+    let email;
+    let address;
+    let typeService;
+    let typeRoom;
+    let typeCustomer;
+    let discount;
+    let quantityIncluded;
+    let rentsDay;
+    let listCustomers = [];
+    let flag = true;
+    let customerObj;
+
+    function addNewCustomer() {
+        name = prompt("Nhập tên");
+        do {
+            cmnd = prompt("Nhập cmnd");
+        } while (!checkId(cmnd));
+        do {
+            birthday = prompt('Nhập ngày sinh');
+        } while (!checkday(birthday))
+        do {
+            email = prompt('Nhập email');
+        } while (!checkMail(email));
+        address = prompt("Nhập địa chỉ");
+        typeService = prompt("Nhập Loại dịch vụ");
+        typeRoom = prompt("Nhập loại phòng");
+        typeCustomer = prompt("Loại khách hàng ");
+        do {
+            discount = prompt("Giảm giá");
+        } while (!checkNumber(discount));
+        do {
+            quantityIncluded = prompt("Số lượng người đi kèm ");
+        } while (!checkNumber(quantityIncluded));
+        do {
+            rentsDay = prompt('Số ngày thuê');
+        } while (!checkNumber(rentsDay));
+
+        customerObj = new Customer(name, cmnd, birthday, email, address,
+            typeService, typeRoom, typeCustomer, discount, quantityIncluded, rentsDay);
+        listCustomers.push(customerObj);
+    }
+
+    function displayCustomer() {
+        // danh sách customer lưu tạm
+        let dsCustomer = "";
+
+        // duyệt mảng listCustomers để cộng dồn toàn bộ customer có trong mảng vào danh sách lưu tạm
+        for (let i = 0; i < listCustomers.length; i++) {
+            dsCustomer += (i + 1) + ". Họ và Tên : " + listCustomers[i].name + ' | ' + "Số cmnd : " + listCustomers[i].cmnd + '\n';
+        }
+
+        // biến input để lưu vị trí customer cần hiển thị, do người dùng nhập vào
+        let input = prompt(dsCustomer); // input là kiểu chuỗi
+
+        // biến chọn để chuyển string thành number
+        let chon = parseInt(input);
+
+        alert("1.Họ và Tên : " + listCustomers[chon - 1].name + '\n' + "2.Số cmnd : " + listCustomers[chon - 1].cmnd + '\n' +
+            "3.Ngày sinh : " + listCustomers[chon - 1].birthday + '\n' + "4.Email : " + listCustomers[chon - 1].email + '\n' +
+            "5.Địa chỉ: : " + listCustomers[chon - 1].address + '\n' + "6.Loại dịch vụ : " + listCustomers[chon - 1].typeService + '\n' +
+            "7.Loại phòng : " + listCustomers[chon - 1].typeRoom + '\n' + "8.Loại khách hàng : " + listCustomers[chon - 1].typeCustomer + '\n' +
+            "9.Giảm giá : " + listCustomers[chon - 1].discount + '\n' + "10.Số lượng đi kèm : " + listCustomers[chon - 1].quantityIncluded + '\n' +
+            "11.Số ngày thuê : " + listCustomers[chon - 1].rentsDay + '\n')
+    }
+
+    function tinhTien() {
+        let dsCustomer = "";
+        for (let i = 0; i < listCustomers.length; i++) {
+            dsCustomer += (i + 1) + ". Họ và Tên : " + listCustomers[i].name + ' | ' + "Số cmnd : " + listCustomers[i].cmnd + '\n';
+        }
+        let chon = parseInt(prompt(dsCustomer));
+        alert("Tong tien: " + listCustomers[chon - 1].billMoney());
+
+    }
+
+    function editCustomer() {
+        let dsCustomer = "";
+        for (let i = 0; i < listCustomers.length; i++) {
+            dsCustomer += (i + 1) + ". Họ và Tên : " + listCustomers[i].name + ' | ' + "Số cmnd : " + listCustomers[i].cmnd + '\n';
+        }
+
+        let chon = parseInt(prompt(dsCustomer));
+        if (chon > listCustomers.length) {
+            alert("ko có trông danh sách");
+        }
+
+        let chonDeSua = prompt("1.Họ và Tên : " + listCustomers[chon - 1].name + '\n' +
+            "2.Số cmnd : " + listCustomers[chon - 1].cmnd + '\n' +
+            "3.Ngày sinh : " + listCustomers[chon - 1].birthday + '\n' +
+            "4.Email : " + listCustomers[chon - 1].email + '\n' +
+            "5.Địa chỉ: : " + listCustomers[chon - 1].address + '\n' +
+            "6.Loại dịch vụ : " + listCustomers[chon - 1].typeService + '\n' +
+            "7.Loại phòng : " + listCustomers[chon - 1].typeRoom + '\n' +
+            "8.Loại khách hàng : " + listCustomers[chon - 1].typeCustomer + '\n' +
+            "9.Giảm giá : " + listCustomers[chon - 1].discount + '\n' +
+            "10.Số lượng đi kèm : " + listCustomers[chon - 1].quantityIncluded + '\n' +
+            "11.Số ngày thuê : " + listCustomers[chon - 1].rentsDay + '\n');
+
+        switch (chonDeSua) {
+            case '1': {
+                name = prompt("nhập tên mới");
+                listCustomers[chon - 1].name = name;
+                break;
+            }
+            case '2': {
+                cmnd = prompt("nhập cmnd mới");
+                listCustomers[chon - 1].cmnd = cmnd;
+                break;
+            }
+            case '3': {
+                birthday = prompt("nhập ngày sinh mới");
+                listCustomers[chon - 1].birthday = birthday;
+                break;
+            }
+            case '4': {
+                email = prompt("nhập email mới");
+                listCustomers[chon - 1].email = email;
+                break;
+            }
+            case '5': {
+                address = prompt("nhập địa chỉ mới");
+                listCustomers[chon - 1].address = address
+                break;
+            }
+            case '6': {
+                typeService = prompt("nhập loại dịch vụ muốn đổi");
+                listCustomers[chon - 1].typeService = typeService;
+                break;
+            }
+            case '7': {
+                typeRoom = prompt("nhập loại phòng bạn muốn đổi");
+                listCustomers[chon - 1].typeRoom = typeRoom;
+                break;
+            }
+            case '8': {
+                typeCustomer = prompt("loại khách hàng mới");
+                listCustomers[chon - 1].typeCustomer = typeCustomer;
+                break;
+            }
+            case '9': {
+                discount = prompt("nhập mức giảm giá mới");
+                listCustomers[chon - 1].discount = discount;
+                break;
+            }
+            case '10': {
+                quantityIncluded = prompt("nhập số lượng mới");
+                listCustomers[chon - 1].quantityIncluded = quantityIncluded;
+                break;
+            }
+            case '11': {
+                rentsDay = prompt("nhập số ngày mới");
+                listCustomers[chon - 1].rentsDay = rentsDay;
+                break;
+            }
+        }
+        displayCustomer()
+    }
+
+    function deleteCustomer() {
+        let dsCustomer = "";
+        for (let i = 0; i < listCustomers.length; i++) {
+            dsCustomer += (i + 1) + ". Họ và Tên : " + listCustomers[i].name + ' | ' + "Số cmnd : " + listCustomers[i].cmnd + '\n';
+        }
+        let chon = parseInt(prompt(dsCustomer));
+        let kiemtra = confirm("bạn có muốn xoá ko");
+        if (kiemtra) {
+            listCustomers.splice(chon - 1, 1);
+        }
+        //đúng xoá sai thì huề vốn
+        displayCustomer();
+    }
+
+    function exit() {
+        let dong = confirm("dụng vào mà đi tù");
+        flag = false;
+        window.close(dong);
+    }
+
+    function checkId(a) {
+        if (a === "" || isNaN(a) || a.length != 8) {
+            alert("hãy nhập đúng định dạng");
+        } else return true;
+    }
+
+    function checkday(a) {
+        if (a.charAt(2) === '/' && a.charAt(5) === '/') {
+            let day = a.substring(0, 2);
+            let month = a.substring(3, 5);
+            let year = a.substring(6, 10);
+            if (!isNaN(day) && !isNaN(month) && !isNaN(year)) {
+                day = Number.parseFloat(day);
+                month = Number.parseFloat(month);
+                year = Number.parseFloat(year);
+                if (Number.isInteger(day) && Number.isInteger(month) && Number.isInteger(year)) {
+                    if (day < 32 && month < 13 && year > 1950) {
+                        return true;
+                    }
+                }
+            }
+        }
+        alert("hãy nhập đúng định dạng")
+    }
+
+    function checkMail(a) {
+        let atpos = a.indexOf('@');
+        let dotpos = a.indexOf('.');
+        if (atpos < 1 || dotpos < 1) {
+            alert("hãy nhập dúng dịnh dạng:abc@abc.abc");
+            return false;
+        }
+        return true;
+    }
+
+    function checkNumber(a) {
+        if (isNaN(a)) {
+            alert("Hãy nhập số");
+            return false
+        }
+        return true;
+
+    }
+
+    do {
+        let a = prompt("1.Add New Customer." + '\n' +
+            "2.Display Information Customer." + '\n' +
+            "3. BillMoney." + '\n' +
+            "4.Edit information customer ." + '\n' +
+            "5.Delete Customer." + '\n' +
+            "6.Exit.");
+
+        switch (a * 1) {
+            case 1 :
+                addNewCustomer();
+                break;
+            case 2 :
+                displayCustomer();
+                break;
+            case 3 :
+                tinhTien();
+                break;
+            case 4 :
+                editCustomer();
+                break;
+            case 5 :
+                deleteCustomer();
+                break;
+            case 6:
+                exit();
+                break;
+        }
+
+    } while (flag);
+    //flag=false thì chương trình sẽ dừng
+</script>
+</body>
+</html>
