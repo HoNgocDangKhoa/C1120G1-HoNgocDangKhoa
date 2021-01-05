@@ -45,13 +45,16 @@ public class hienthicacloaijhinh {
                 case 4:
                     for (int i = 0; i < 5; i++) {
                         for (int k = 5; k > i; k--) {
-                            System.out.print("  ");
+                            System.out.print(" ");
                         }
                         for (int n = 1; n <= i; n++) {
-                            System.out.print("* ");
+                            System.out.print("*");
                         }
                         for (int j = 0; j <= i; j++) {
-                            System.out.print("* ");
+                            System.out.print("*");
+                        }
+                        for (int l = 5; l > i; l--) {
+                            System.out.print(" ");
                         }
                         System.out.println();
                     }
