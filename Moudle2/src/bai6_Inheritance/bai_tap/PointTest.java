@@ -6,4 +6,7 @@ public class PointTest {
         point.setXy(point.getX(),point.getY());
         System.out.println(point);
     }
+
+    public static class Point3DTest {
+    }
 }

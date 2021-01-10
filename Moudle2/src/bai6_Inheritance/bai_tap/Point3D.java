@@ -33,9 +33,5 @@ public class Point3D extends Point2D {
                 " xyz=" + Arrays.toString(xyz) ;
     }
 
-    public static void main(String[] args) {
-        Point3D point3D=new Point3D(9,45,2);
-        point3D.setXyz();
-        System.out.println(point3D);
-    }
+
 }
