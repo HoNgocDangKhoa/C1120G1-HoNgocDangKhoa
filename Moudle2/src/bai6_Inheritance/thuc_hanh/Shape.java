@@ -32,10 +32,9 @@ public class Shape {
 
     @Override
     public String toString() {
-        return "Shape "+"\n"+
-                "with color of "
-                +getColor()
-                +" and " +
-                (isFilled() ?  "filled" : "not filled" );
+        return
+                "màu sắc là :  "
+                +getColor() +"\n"+
+                (isFilled() ?  "lấp đầy" : "chưa lấp đầy " );
     }
 }
