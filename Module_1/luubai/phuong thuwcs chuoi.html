@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    // Chiều dài chuỗi
+    // Các lengthtài sản trả về chiều dài của một chuỗi:
+    var txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    var sln = txt.length;
+
+    // Tìm một chuỗi trong một chuỗi
+    // Các indexOf()phương thức trả về chỉ số của (vị trí của) các firstlần xuất hiện của một văn bản quy định tại một chuỗi:
+    var str = "Please locate where 'locate' occurs!";
+    var pos = str.indexOf("locate");
+
+    // Các lastIndexOf()phương thức trả về chỉ số của cuối cùng xảy ra một văn bản quy định tại một chuỗi:
+    var str = "Please locate where 'locate' occurs!";
+    var pos = str.lastIndexOf("locate");
+
+    // Cả hai indexOf()và lastIndexOf()trả về -1 nếu không tìm thấy văn bản.
+    // Các search()phương pháp không thể lấy một đối số vị trí bắt đầu thứ hai.
+        // Các indexOf()phương pháp không thể lấy giá trị tìm kiếm mạnh mẽ (biểu thức thông thường).
+    //
+    // Giải nén các bộ phận chuỗi
+    // Có 3 phương pháp để trích xuất một phần của chuỗi:
+
+        slice(start, end)
+    substring(start, end)
+    substr(start, length)
+
+        // Phương thức Slice ()
+    // slice() trích xuất một phần của chuỗi và trả về phần được trích xuất trong một chuỗi mới.
+    //
+    //     Phương thức nhận 2 tham số: vị trí bắt đầu và vị trí kết thúc (không bao gồm kết thúc).
+    var str = "Apple, Banana, Kiwi";
+    var res = str.slice(7, 13);
+
+
+    // Phương thức chuỗi con ()
+    // substring()tương tự như slice().
+    //
+    //     Sự khác biệt là substring()không thể chấp nhận các chỉ số âm.
+    var str = "Apple, Banana, Kiwi";
+    var res = str.substring(7, 13);      (banana)
+
+
+    // Phương thức substr ()
+    // substr()tương tự như slice().
+    //
+    //     Sự khác biệt là tham số thứ hai chỉ định độ dài của phần được trích xuất.
+    //
+    //     Thí dụ
+    var str = "Apple, Banana, Kiwi";
+    var res = str.substr(7, 6);           (banana);
+
+    // Chuyển đổi sang chữ hoa và chữ thường
+    // Một chuỗi được chuyển đổi thành chữ hoa với toUpperCase():
+    var text1 = "Hello World!";       // String
+    var text2 = text1.toUpperCase();  // text2 is text1 converted to upper
+
+    // Một chuỗi được chuyển đổi thành chữ thường với toLowerCase():
+    var text1 = "Hello World!";       // String
+    var text2 = text1.toLowerCase();  // text2 is text1 converted to lower
+
+
+    // Các trim()Loại bỏ phương pháp khoảng trắng từ cả hai phía của một chuỗi:
+    String.trim ()
+
+    var str = "       Hello World!        ";
+    alert(str.trim());
+
+    // Các trim()phương pháp không được hỗ trợ trong Internet Explorer 8 hoặc giảm.
+    //
+
+
+
+    // Phương thức charAt ()
+    // Các charAt()phương thức trả về các nhân vật tại một chỉ số nào đó (vị trí) trong một chuỗi:
+
+
+    //
+    // Chuyển đổi một chuỗi thành một mảng
+    // Một chuỗi có thể được chuyển đổi thành một mảng bằng split()phương thức:
+    var txt = "a,b,c,d,e";   // String
+    txt.split(",");          // Split on commas
+    txt.split(" ");          // Split on spaces
+    txt.split("|");          // Split on pipe
+
+</script>
+
+</body>
+</html>

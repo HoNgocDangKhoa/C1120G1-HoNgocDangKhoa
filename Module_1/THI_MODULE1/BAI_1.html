@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BAI1</title>
+</head>
+<body>
+<script>
+    let array = [];
+    let number;
+    do {number= parseInt(prompt("nhập số kí tự trong mảng"));
+        if (number>20){alert("length ko dc qua 20")}
+    }
+    while(number>20)
+
+    for (let i = 0; i < number; i++) {
+        let count=0;
+        array[i] = prompt("kí tự thứ :"+ i);
+        for(let i=1;i<array.length;i++){
+
+            if(array[0]===array[i]){
+                count++;
+                document.write(array[i]+":"+count+"</br>")
+            }else {
+                document.write(array[i])
+            }
+        }
+
+    }
+    // document.write("mang la : [" + array+"]");
+    // document.write('<br>')
+
+
+
+</script>
+</body>
+</html>

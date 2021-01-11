@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // Popping
+    // Các pop()phương pháp loại bỏ các yếu tố cuối cùng từ một mảng:
+    var fruits = ["Banana", "Orange", "Apple", "Mango"];
+    fruits.pop();              // Removes the last element ("Mango") from fruits
+
+    // Đẩy
+    // Các push()phương pháp thêm một yếu tố mới để một mảng (ở cuối):
+    var fruits = ["Banana", "Orange", "Apple", "Mango"];
+    fruits.push("Kiwi");       //  Adds a new element ("Kiwi") to fruits
+
+    // Xóa các phần tử
+    // Vì mảng JavaScript là các đối tượng, các phần tử có thể bị xóa bằng cách sử dụng toán tử JavaScript delete:
+    var fruits = ["Banana", "Orange", "Apple", "Mango"];
+    delete fruits[0];
+    //
+
+    // Nối một mảng
+    // Các splice()phương pháp có thể được sử dụng để thêm các mục mới vào một mảng:
+    var fruits = ["Banana", "Orange", "Apple", "Mango"];
+    fruits.splice(2, 0, "Lemon", "Kiwi");
+    //
+    // Sử dụng splice () để loại bỏ các phần tử
+    // Với cài đặt thông số thông minh, bạn có thể sử dụng splice()để loại bỏ các phần tử mà không để lại "lỗ hổng" trong mảng:
+    var fruits = ["Banana", "Orange", "Apple", "Mango"];
+    fruits.splice(0, 1);        // Removes the first element of fruits
+
+    // Hợp nhất (Nối) Mảng
+    // Các concat()phương pháp tạo ra một mảng mới bằng cách sáp nhập (concatenating) mảng hiện có:
+    var myGirls = ["Cecilie", "Lone"];
+    var myBoys = ["Emil", "Tobias", "Linus"];
+    var myChildren = myGirls.concat(myBoys);   // Concatenates (joins) myGirls and myBoys;
+
+    var arr1 = ["Cecilie", "Lone"];
+    var arr2 = ["Emil", "Tobias", "Linus"];
+    var arr3 = ["Robin", "Morgan"];
+    var myChildren = arr1.concat(arr2, arr3);   // Concatenates arr1 with arr2 and arr3;
+
+    // Các slice()phương pháp tạo ra một mảng mới. Nó không loại bỏ bất kỳ phần tử nào khỏi mảng nguồn.
+    var fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+    var citrus = fruits.slice(3);
+
+    // Đảo ngược một mảng
+    var fruits = ["Banana", "Orange", "Apple", "Mango"];
+    fruits.sort();        // First sort the elements of fruits
+    fruits.reverse();     // Then reverse the order of the elements
+
+    var points = [40, 100, 1, 5, 25, 10];
+    points.sort(function(a, b){return a - b});
+
+    // Sắp xếp một mảng theo thứ tự ngẫu nhiên
+    var points = [40, 100, 1, 5, 25, 10];
+    points.sort(function(a, b){return 0.5 - Math.random()});
+
+    // Tìm giá trị mảng cao nhất (hoặc thấp nhất)
+    var points = [40, 100, 1, 5, 25, 10];
+    points.sort(function(a, b){return a - b});
+//    a-b min
+//    b-a max
+
+
+    // Sử dụng Math.max () trên một mảng
+    // Bạn có thể sử dụng Math.max.applyđể tìm số cao nhất trong một mảng:
+    function myArrayMax(arr) {
+        return Math.max.apply(null, arr);
+    }
+
+</script>
+</body>
+</html>

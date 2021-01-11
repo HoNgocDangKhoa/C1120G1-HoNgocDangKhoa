@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //Hiển thị số nguyên tố
+    // let number=parseInt(prompt("nhaapj soo"));
+    // let countPrime=0;
+    // let count=0;
+    // let n=2;
+    // while(countPrime<number) {
+    //     count = 0;
+    //     for (let i =1; i <= n; i++) {
+    //
+    //         if (n%i === 0) {
+    //             count++;
+    //         }
+    //     }
+    //     if (count === 2) {
+    //         countPrime++;
+    //        document.write(n+"<br>");
+    //     }
+    //     n++;
+    // }
+
+    //hiển thị số trong dãy fibonaci
+    // let number=parseInt(prompt("nhập số "))
+    function checkfibo(number){
+    let a=0;
+    document.write(a+'<br>');
+    let b=1;
+    document.write(b+'<br>');
+    let c;
+    let sum=1;
+    for (let i=1;i<=number-2;i++){
+        c=b+a;
+        a=b;
+        b=c;
+        document.write(c+'<br>')
+        sum+=c;
+    }
+        document.write("Tong la:"+sum)
+    }
+
+    checkfibo(5)
+
+
+</script>
+</body>
+</html>

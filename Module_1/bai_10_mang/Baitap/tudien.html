@@ -9,17 +9,21 @@
 <input type="text" id="vn" placeholder="tiếng việt">
 <input type="button" onclick="timkiem()" value="tìm kiếm">
 <script>
-    let input = prompt('nhap từ khoá càn tìm');
-    let a = ['music', 'sport', 'football', 'name',];
-    let b = ['âm nhạc', 'thể thao', 'đá bóng', 'tên'];
-    for (let i = 0; i < a.length; i++) {
-        if (a[i] === input) {
-            alert(b[i]);
-        }
-        else {
-            alert('không tìm thấy kết quả')}
+    function timkiem() {
+        let flag=false
+        let input = document.getElementById("engligh").value
+        let a = ['music', 'sport', 'football', 'name',];
+        let b = ['âm nhạc', 'thể thao', 'đá bóng', 'tên'];
+        for (let i = 0; i < a.length; i++) {
+            if (input===a[i]) {
+                flag=true;
+            //     document.getElementById("vn").innerText=b[i];
+            // } else {
+            //     alert('không tìm thấy kết quả')
+            }
         }
 
+    }
 
 </script>
 </body>

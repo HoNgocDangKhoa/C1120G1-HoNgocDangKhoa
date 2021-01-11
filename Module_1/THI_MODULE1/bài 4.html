@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Sanpham {
+        constructor(masangpham, ten, hangsanxuat, gia) {
+            this.masanpham = masangpham;
+            this.ten = ten;
+            this.hangsanxuat = hangsanxuat;
+            this.gia = gia;
+        }
+
+        getMa() {
+            return this.masanpham;
+        }
+
+        setMa(ma) {
+            this.masanpham = ma;
+        }
+
+        getTen() {
+            return this.ten;
+        }
+
+        setTen(name) {
+            this.ten = name;
+        }
+
+        getGia() {
+            return this.gia;
+        }
+
+        setGia(gia) {
+            this.gia = gia;
+        }
+
+        toStting() {
+
+        }
+    }
+
+    let ma;
+    let ten;
+    let hangsanxuat;
+    let gia
+    let input = parseInt(prompt("nhapj soo"));
+    switch (input) {
+        case "1":
+            add();
+            break;
+        case '2':
+            display();
+            break;
+
+
+    }
+
+
+    function add() {
+        ma = prompt("nhap ma" + ma + '<br>');
+        ten = prompt("nhap ten" + ten + '<br>');
+        hangsanxuat = ("nhap hang" + hangsanxuat + '<br>');
+        gia = prompt("nhaapj gia" + gia + '<br>')
+
+    }
+    function display() {
+        alert("ma :"+ma+'\n'+
+        "ten :"+ten+'\n'+
+        "hang :"+hangsanxuat+'\n'+
+        "gia"+gia)
+
+    }
+</script>
+</body>
+</html>
