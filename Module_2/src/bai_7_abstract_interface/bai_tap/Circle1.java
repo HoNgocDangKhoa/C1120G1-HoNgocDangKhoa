@@ -1,19 +1,17 @@
 package bai_7_abstract_interface.bai_tap;
 
-import bai6_Inheritance.thuc_hanh.Shape;
-
-public class Circle extends Shape implements Resizeable {
+public class Circle1 extends Shape implements Resizeable {
     private double darius;
 
-    public Circle() {
+    public Circle1() {
         darius=1.0;
     }
 
-    public Circle(double darius) {
+    public Circle1(double darius) {
         this.darius = darius;
     }
 
-    public Circle(String color, boolean filled, double darius) {
+    public Circle1(String color, boolean filled, double darius) {
         super(color, filled);
         this.darius = darius;
     }
@@ -26,10 +24,11 @@ public class Circle extends Shape implements Resizeable {
         this.darius = darius;
     }
     public double getArea(){
-        return getDarius()*2*Math.PI;
+        return (getDarius()*getDarius())*Math.PI;
     }
     public double getPerimeter(){
-        return (getDarius()*getDarius())*Math.PI;
+
+        return getDarius()*2*Math.PI;
     }
 
     @Override
