@@ -52,7 +52,7 @@ public class Triangle extends Shape {
     public double getArea(){
         return Math.sqrt(getNuaChuVi()*(getNuaChuVi()-side1)*(getNuaChuVi()-side2)*(getNuaChuVi()-side3));
     }
-    public double getPerimeter(){
+    public double getPerimeter() {
         return side1+side2+side3;
     }
 

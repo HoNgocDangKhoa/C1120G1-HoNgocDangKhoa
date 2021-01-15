@@ -1,8 +1,9 @@
 package bai10_dsa_danh_sach.baitap;
 
 import java.util.Arrays;
+import java.util.Iterator;
 
-public class MyList<E> {
+public class MyList<E>  {
     public int element;
     private int size = 0;
     private static final int DEFAUT_CAPACITY = 10;
@@ -26,18 +27,19 @@ public class MyList<E> {
         }
     }
     //phương thức thêm một phần tử vào mảng tại vị trí chỉ định (index)
-    public void add(int index,E element){
-        if(index>elements.length||index<0){
+    public void add(E element,int index){
+        if(index>elements.length){
             throw new IndexOutOfBoundsException();
         }else if(elements.length==size){
-            ensureCapacity(5);
+          this.ensureCapacity(5);
         }
         if(elements[index]==null){
             elements[index]=element;
             size++;
         }else {
-            for (int i=size+1;i>=index-1;i--){
-                elements[index]=elements[index-1];
+
+            for (int i=size+1;i>=index;i--){
+                elements[i]=elements[i-1];
             }
             elements[index]=element;
             size++;
@@ -66,4 +68,6 @@ public class MyList<E> {
             elements[1]=null;
     }
 }
+
+
 }
