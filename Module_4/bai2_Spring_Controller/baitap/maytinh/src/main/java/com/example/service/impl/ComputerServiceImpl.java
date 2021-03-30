@@ -21,7 +21,6 @@ public class ComputerServiceImpl implements ComputerService {
                 result = first * second;
                 break;
             case "division(/)":
-
                 result = first / second;
                 break;
         }
