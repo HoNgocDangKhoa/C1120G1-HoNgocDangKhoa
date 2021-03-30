@@ -19,16 +19,19 @@
 <body>
 <form action="computer" method="post">
     <h1>Calculation</h1>
-    <span><input type="text" name="first" value="${first}"> <input type="text" name="second" value="${second}"></span>
+    <span><input type="text" name="first" value="${first}">
+        <input type="text" name="second" value="${second}">
+    </span>
     <span>
         <input type="submit" name="calculation" value="addition(+)">
         <input type="submit" name="calculation" value="subtraction(-)">
         <input type="submit" name="calculation" value="multiplication(*)">
         <input type="submit" name="calculation" value="division(/)">
     </span>
-
-    <h2>Result ${calculation}: ${result}</h2>
 </form>
+<%--<c:if test="${result} != null">--%>
+    <h2>Result ${calculation}: ${result}</h2>
+<%--</c:if>--%>
 
 </body>
 </html>

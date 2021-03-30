@@ -19,8 +19,8 @@ public class SandwichController {
 
    @PostMapping("/sandwich")
     public String save(Model model, @RequestParam("condiment") String [] condiments) {
-    model.addAttribute("listCondiment",condiments);
-    return "index";
+         model.addAttribute("listCondiment",condiments);
+         return "index";
     }
 //    @RequestMapping("/sandwich")
 //    public String save(Model model, @RequestParam ("condiment" )String [] condiment) {

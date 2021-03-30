@@ -17,26 +17,12 @@ public class ComputerController {
         return "index";
     }
     @PostMapping("computer")
-    public String calculation(@RequestParam String calculation , Model model,@RequestParam int first,@RequestParam int second){
+    public String calculation(Model model,@RequestParam int first,@RequestParam int second,@RequestParam String calculation){
+        int result = computerService.calculation(first,second,calculation);
         model.addAttribute("first",first);
         model.addAttribute("second",second);
-     switch (calculation){
-            case "addition(+)":
-                model.addAttribute("result",computerService.addition(first,second));
-                break;
-            case "subtraction(-)":
-                model.addAttribute("result",computerService.subtraction(first,second));
-                break;
-            case "multiplication(*)":
-                model.addAttribute("result",computerService.multiplication(first,second));
-                break;
-            case "division(/)":
-                model.addAttribute("result",computerService.division(first,second));
-                break;
-
-
-        }
         model.addAttribute("calculation",calculation);
+        model.addAttribute("result",result);
         return "index";
     }
 
