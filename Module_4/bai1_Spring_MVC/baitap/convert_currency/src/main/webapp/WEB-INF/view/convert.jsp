@@ -13,7 +13,7 @@
 <body>
 <h2>chuyen doi USD sang VND</h2>
 <form action="/convert" method="post">
-<p>USD <input type="text" name="convert"></p>
+    <p>USD <input type="text" name="convert"></p>
     <input type="submit" value="convert">
 </form>
 </body>

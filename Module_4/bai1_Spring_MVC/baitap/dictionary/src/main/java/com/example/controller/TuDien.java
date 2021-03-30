@@ -16,8 +16,7 @@ public class TuDien {
         return "/show";
     }
     @PostMapping("/search")
-    public String search (@RequestParam String search, Model model){
-
+    public String search(@RequestParam String search, Model model){
         Map<String,String> stringMap = new HashMap<>();
         stringMap.put("hello","xin chao");
         stringMap.put("search","tim kiem");

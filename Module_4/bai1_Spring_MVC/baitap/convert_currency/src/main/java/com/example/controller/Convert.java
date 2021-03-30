@@ -9,14 +9,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class Convert {
     @GetMapping ("/")
-    public String convert(){
+    public String getForm(){
         return "/convert";
     }
     @PostMapping("/convert")
     public  String ConvertUSD(@RequestParam int convert, Model model){
-   int vnd = convert*23000;
-   model.addAttribute("convert",convert);
-   model.addAttribute("vnd",vnd);
-   return "/convert1";
+        int vnd = convert*23000;
+        model.addAttribute("convert",convert);
+        model.addAttribute("vnd",vnd);
+        return "/convert1";
     }
 }
