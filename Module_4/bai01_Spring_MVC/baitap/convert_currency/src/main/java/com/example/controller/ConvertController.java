@@ -13,7 +13,7 @@ public class Convert {
         return "/index";
     }
     @PostMapping("/convert")
-    public  String ConvertUsd(@RequestParam int convert, Model model){
+    public  String convertUsd(@RequestParam int convert, Model model){
         int vnd = convert*23000;
         model.addAttribute("convert",convert);
         model.addAttribute("vnd",vnd);
