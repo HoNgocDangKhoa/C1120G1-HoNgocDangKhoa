@@ -22,13 +22,13 @@
         <td>Page Size:</td>
         <td>
             <span>Show</span>
-            ${page_size}
+            ${size}
             <span>email per page</span>
         </td>
     </tr>
     <tr>
         <td>Spams filter</td>
-        <td>${spams_filter}</td>
+        <td>${filter}</td>
     </tr>
     <tr>
         <td>Signature:</td>

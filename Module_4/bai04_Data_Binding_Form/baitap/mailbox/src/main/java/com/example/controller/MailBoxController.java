@@ -22,22 +22,22 @@ public class MailBoxController {
         languages.add("Japanese");
         languages.add("Chinese");
         model.addAttribute("languages", languages);
-        List<Integer> page_size = new ArrayList<>();
-        page_size.add(5);
-        page_size.add(10);
-        page_size.add(15);
-        page_size.add(25);
-        page_size.add(50);
-        page_size.add(100);
-        model.addAttribute("page_size", page_size);
+        List<Integer> size = new ArrayList<>();
+        size.add(5);
+        size.add(10);
+        size.add(15);
+        size.add(25);
+        size.add(50);
+        size.add(100);
+        model.addAttribute("size", size);
         return new ModelAndView("index", "mailbox", new MailBox());
     }
 
     @PostMapping("/save")
     public String saveMailBox(@ModelAttribute MailBox mailBox, Model model, BindingResult result) {
         model.addAttribute("language", mailBox.getLanguages());
-        model.addAttribute("page_size", mailBox.getPage_size());
-        model.addAttribute("spams_filter", mailBox.isSpams_filter());
+        model.addAttribute("size", mailBox.getSize());
+        model.addAttribute("filter", mailBox.isFilter());
         model.addAttribute("signature", mailBox.getSignature());
         return "save";
 

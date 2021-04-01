@@ -2,17 +2,17 @@ package com.example.model;
 
 public class MailBox {
     private String languages;
-    private String page_size;
-    private boolean spams_filter;
+    private String size;
+    private boolean filter;
     private String signature;
 
     public MailBox() {
     }
 
-    public MailBox(String languages, String page_size, boolean spams_filter, String signature) {
+    public MailBox(String languages, String size, boolean filter, String signature) {
         this.languages = languages;
-        this.page_size = page_size;
-        this.spams_filter = spams_filter;
+        this.size = size;
+        this.filter = filter;
         this.signature = signature;
     }
 
@@ -24,20 +24,20 @@ public class MailBox {
         this.languages = languages;
     }
 
-    public String getPage_size() {
-        return page_size;
+    public String getSize() {
+        return size;
     }
 
-    public void setPage_size(String page_size) {
-        this.page_size = page_size;
+    public void setSize(String size) {
+        this.size = size;
     }
 
-    public boolean isSpams_filter() {
-        return spams_filter;
+    public boolean isFilter() {
+        return filter;
     }
 
-    public void setSpams_filter(boolean spams_filter) {
-        this.spams_filter = spams_filter;
+    public void setFilter(boolean filter) {
+        this.filter = filter;
     }
 
     public String getSignature() {

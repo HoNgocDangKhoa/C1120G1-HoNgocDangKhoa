@@ -27,13 +27,13 @@
             <td>Page Size:</td>
             <td>
                 <span>Show</span>
-                <form:select path="page_size" items="${page_size}"/>
+                <form:select path="size" items="${size}"/>
                 <span>email per page</span>
             </td>
         </tr>
         <tr>
             <td>Spams filter</td>
-            <td><form:checkbox path="spams_filter"/>Enable spams filter</td>
+            <td><form:checkbox path="filter"/>Enable spams filter</td>
         </tr>
         <tr>
             <td>Signature</td>
