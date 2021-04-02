@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 public class ProductController {
@@ -20,40 +21,42 @@ public class ProductController {
         model.addAttribute("show", productService.findAll());
         return "index";
     }
+
     @GetMapping("create")
-    public String showCreateForm( Model model){
-     model.addAttribute("createProduct",new Product());
-     return "create";
+    public String showCreateForm(Model model) {
+        model.addAttribute("createProduct", new Product());
+        return "create";
     }
+
     @PostMapping("/save")
-    public String saveProduct(Product product){
-        product.setId((int)(Math.random()*100));
+    public String saveProduct(Product product) {
+        product.setId((int) (Math.random() * 100));
         productService.saveProduct(product);
         return "redirect:/";
     }
+
     @GetMapping("edit")
-    public String showFormEdit(@RequestParam int id,Model model){
-        model.addAttribute("editProduct",productService.findById(id));
+    public String showFormEdit(@RequestParam int id, Model model) {
+        model.addAttribute("editProduct", productService.findById(id));
         return "edit";
     }
+
     @PostMapping("update")
-    public String editProduct(Product product){
-       productService.saveProduct(product);
-       return "redirect:/";
+    public String editProduct(Product product) {
+        productService.saveProduct(product);
+        return "redirect:/";
     }
+
     @GetMapping("view")
-    public String showView(@RequestParam int id, Model model){
-       model.addAttribute("showView",productService.findById(id));
-       return "view";
+    public String showView(@RequestParam int id, Model model) {
+        model.addAttribute("showView", productService.findById(id));
+        return "view";
     }
-    @GetMapping("delete")
-    public String showFormDelete(@RequestParam int id,Model model){
-        model.addAttribute("deleteProduct",productService.findById(id));
-        return "delete";
-    }
-    @PostMapping("/deletes")
-    public String deleteProduct(Product product){
-        productService.deleteProduct(product.getId());
+
+    @PostMapping("/delete")
+    public String deleteProduct(@RequestParam int id, RedirectAttributes redirectAttributes) {
+        productService.deleteProduct(id);
+        redirectAttributes.addFlashAttribute("success", "Delete product successfully");
         return "redirect:/";
     }
 }
