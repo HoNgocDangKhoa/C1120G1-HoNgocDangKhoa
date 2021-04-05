@@ -12,19 +12,19 @@
     <form action="" th:object="${showView}">
         <div>
             <label>Id:</label>
-            <label th:text="${showView.getId()}"></label>
+            <label th:text="*{id}"></label>
         </div>
         <div>
-            <label>Name Product</label>
-            <label th:text="${showView.getNameProduct()}"></label>
+            <label>Name Product:</label>
+            <label th:text="*{nameProduct}"></label>
         </div>
         <div>
             <label>Price Product:</label>
-            <label th:text="${showView.getPrice()}"></label>
+            <label th:text="*{price}"></label>
         </div>
         <div>
             <label>Type Product:</label>
-            <label th:text="${showView.getTypeProduct()}"></label>
+            <label th:text="*{typeProduct}"></label>
         </div>
 
     </form>
