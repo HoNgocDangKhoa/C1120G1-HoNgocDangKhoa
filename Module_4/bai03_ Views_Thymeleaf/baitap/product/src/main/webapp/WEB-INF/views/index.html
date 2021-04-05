@@ -28,11 +28,11 @@
     </thead>
     <tbody>
     <tr th:each="product : ${show}">
-        <td th:text="${product.getId()}"></td>
-        <td th:text="${product.getNameProduct()}"></td>
-        <td th:text="${product.getPrice()}"></td>
-        <td th:text="${product.getTypeProduct()}"></td>
-        <td><a th:href="@{/edit(id=${product.getId()})}">edit</a></td>
+        <td th:text="${product.id}"></td>
+        <td th:text="${product.nameProduct}"></td>
+        <td th:text="${product.price}"></td>
+        <td th:text="${product.typeProduct}"></td>
+        <td><a th:href="@{/edit(id=${product.id})}">edit</a></td>
         <!--        <td><a th:href="@{/delete(id=${product.getId()})}">delete</a></td>-->
         <td>
             <a>
