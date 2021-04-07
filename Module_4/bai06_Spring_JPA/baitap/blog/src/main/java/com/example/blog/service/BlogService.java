@@ -9,8 +9,8 @@ public interface BlogService {
 
     void save(Blog blog);
 
-    void remove(int id);
+    void remove(long id);
 
-    Blog findById(int id);
+    Blog findById(long id);
 
 }

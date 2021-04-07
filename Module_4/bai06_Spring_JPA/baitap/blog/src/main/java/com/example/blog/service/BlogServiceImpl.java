@@ -23,12 +23,12 @@ public class BlogServiceImpl implements BlogService {
     }
 
     @Override
-    public void remove(int id) {
+    public void remove(long id) {
         blogRepository.deleteById(id);
     }
 
     @Override
-    public Blog findById(int id) {
+    public Blog findById(long id) {
         return blogRepository.findById(id).orElse(null);
     }
 }

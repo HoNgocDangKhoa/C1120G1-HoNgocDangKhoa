@@ -12,24 +12,20 @@
     <form action="#" th:action="@{/update}" th:object="${editBlog}"
           method="POST" novalidate="novalidate">
         <input type="hidden" th:field="*{id}"/>
+        <input type="hidden" th:field="*{registrationDate}">
         <div>
-            <label>Name</label>
+            <label>Title</label>
             <label>
                 <input type="text" th:field="*{title}"/>
             </label>
         </div>
         <div>
-            <label>Email</label>
+            <label>Context</label>
             <label>
                 <textarea type="text" th:field="*{context}"></textarea>
             </label>
         </div>
-        <div>
-            <label>Address</label>
-            <label>
-                <input type="date" th:field="*{registrationDate}"/>
-            </label>
-        </div>
+
         <input type="submit" value="Edit"/>
     </form>
 </div>

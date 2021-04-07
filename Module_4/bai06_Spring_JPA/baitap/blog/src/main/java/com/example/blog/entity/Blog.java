@@ -6,32 +6,28 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.sql.Date;
+
+import java.sql.Timestamp;
 
 @Entity
 public class Blog {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
     private String title;
     private String context;
-    private Date registrationDate;
+    private Timestamp registrationDate;
 
     public Blog() {
     }
 
-    public Blog(int id, String nameBlog, String context, Date registrationDate) {
-        this.id = id;
-        this.title = title;
-        this.context = context;
-        this.registrationDate = registrationDate;
-    }
 
-    public int getId() {
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -51,11 +47,11 @@ public class Blog {
         this.context = context;
     }
 
-    public Date getRegistrationDate() {
+    public Timestamp getRegistrationDate() {
         return registrationDate;
     }
 
-    public void setRegistrationDate(Date registrationDate) {
+    public void setRegistrationDate(Timestamp registrationDate) {
         this.registrationDate = registrationDate;
     }
 }

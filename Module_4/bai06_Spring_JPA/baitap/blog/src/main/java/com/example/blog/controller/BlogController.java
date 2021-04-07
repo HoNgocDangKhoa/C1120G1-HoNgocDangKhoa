@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.sql.Timestamp;
+
 @Controller
 public class BlogController {
     @Autowired
@@ -17,6 +19,7 @@ public class BlogController {
 
     @GetMapping("/")
     public ModelAndView showList() {
+
         return new ModelAndView("list", "listBlog", blogService.findAllBlog());
     }
 
@@ -28,12 +31,17 @@ public class BlogController {
 
     @PostMapping("addBlog")
     public String addBlog(Blog blog) {
+        if (blog.getId() != null) {
+            System.out.println(blog.getRegistrationDate());
+        } else {
+            blog.setRegistrationDate(new Timestamp(System.currentTimeMillis()));
+        }
         blogService.save(blog);
         return "redirect:/";
     }
 
     @GetMapping("edit")
-    public String showEditForm(@RequestParam int id, Model model) {
+    public String showEditForm(@RequestParam Long id, Model model) {
         model.addAttribute("editBlog", blogService.findById(id));
         return "update";
     }
@@ -45,14 +53,14 @@ public class BlogController {
     }
 
     @GetMapping("view")
-    public String showView(@RequestParam int id, Model model) {
+    public String showView(@RequestParam Long id, Model model) {
         Blog blog = blogService.findById(id);
         model.addAttribute("showView", blog);
         return "view";
     }
 
     @PostMapping("delete")
-    public String delete(@RequestParam int id) {
+    public String delete(@RequestParam Long id) {
         blogService.remove(id);
         return "redirect:/";
     }
