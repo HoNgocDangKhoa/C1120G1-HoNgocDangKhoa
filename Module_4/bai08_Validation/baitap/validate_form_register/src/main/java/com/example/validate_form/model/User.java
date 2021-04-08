@@ -1,7 +1,7 @@
 package com.example.validate_form.model;
 
 
-import org.springframework.stereotype.Component;
+
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
@@ -11,7 +11,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.*;
-@Component
 @Entity
 public class User implements Validator {
     @Id

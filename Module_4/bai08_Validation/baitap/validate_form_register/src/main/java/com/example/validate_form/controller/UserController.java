@@ -20,7 +20,7 @@ public class UserController {
         return new ModelAndView("index","user",new User());
     }
     @PostMapping("/validateForm")
-    public String save(@Validated User user, Model model, BindingResult bindingResult){
+    public String save(@Validated User user, BindingResult bindingResult, Model model){
      new User().validate(user,bindingResult);
      if(bindingResult.hasErrors()){
          model.addAttribute("user",user);
