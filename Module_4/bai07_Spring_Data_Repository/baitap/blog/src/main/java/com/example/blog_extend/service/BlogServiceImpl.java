@@ -35,4 +35,15 @@ public class BlogServiceImpl implements BlogService {
     public Blog findById(Long id) {
         return blogRepository.findById(id).orElse(null);
     }
+
+    @Override
+    public Page<Blog> search(String name, Pageable pageable) {
+        return blogRepository.findAllByTitleContaining(name, pageable);
+    }
+
+    @Override
+    public Page<Blog> sort(Pageable pageable) {
+        return blogRepository.findByOrderByRegistrationDateAsc(pageable);
+    }
+
 }
