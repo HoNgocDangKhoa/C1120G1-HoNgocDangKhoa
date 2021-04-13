@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <form th:action="@{/delete/{id}(id=${delete.id})}" method="post" th:object="${delete}">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="name">Id</label>
+                <input type="text" class="form-control" id="id" th:field="*{id}" disabled>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" th:field="*{name}" disabled>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="price">Price</label>
+                <input type="text" class="form-control" id="price" th:field="*{price}" disabled>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="type">Type Phone</label>
+                <input type="text" class="form-control" id="type" th:field="*{price}" disabled>
+            </div>
+        </div>
+<!--        <div class="form-group">-->
+<!--            <label for="type">Type Phone</label>-->
+<!--            <input type="text" class="form-control" id="type" th:field="*{typePhone}" disabled>-->
+<!--        </div>-->
+        <input type="submit"  value="delete">
+    </form>
+</div>
+</body>
+</html>
