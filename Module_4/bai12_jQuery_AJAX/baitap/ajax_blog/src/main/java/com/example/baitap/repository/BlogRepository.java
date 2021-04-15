@@ -13,7 +13,7 @@ import java.util.List;
 @Repository
 public interface BlogRepository extends JpaRepository<Blog, Long> {
     List<Blog> findAllByTitleContaining(String search);
-@Query("select b from Blog b where concat(b.title,b.context,b.category.name) like %?1%")
+@Query("select b from Blog b where concat(b.title,b.context,b.category.name) like %?1 `%")
 Page<Blog> findAllByTitleContaining(String title, Pageable pageable);
 
     Page<Blog> findAll(Pageable pageable);

@@ -77,14 +77,8 @@ public class BlogController {
     }
 
 
-    @GetMapping("/search")
-    public String searchBlog(Model model, @RequestParam Long id) {
-        model.addAttribute("view", blogService.findById(id));
-        return "blog/view";
-    }
-
-    @PostMapping("/search")
-    public String listCustomer(Model model, @RequestParam Optional<String> keyword, Pageable pageable) {
+    @GetMapping("/search/{keyword}")
+    public String listCustomer(Model model, @PathVariable Optional<String> keyword, Pageable pageable) {
         if (!keyword.isPresent()) {
             model.addAttribute("listBlog", blogService.findAll(pageable));
             return "blog_list";
