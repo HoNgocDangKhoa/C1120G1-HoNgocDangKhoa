@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:insert="layout::head">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Add Product</h3>
+<p>
+    <a th:href="@{/customer}">
+        Back to product list
+    </a>
+</p>
+
+<div class="form-control">
+    <form th:action="@{/editCustomer}" method="post" th:object="${editCustomer}" novalidate="novalidate">
+        <input type="hidden" th:field="*{cus_id}"/>
+        <div class="form-control">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" th:field="*{cus_name}">
+        </div>
+        <div class="form-control">
+            <label for="bday">BirthDay</label>
+            <input type="date" class="form-control" id="bday" th:field="*{cus_birthDay}">
+        </div>
+        <!--            <div class="form-control">-->
+        <!--                <label for="gender">Gender</label>-->
+        <!--                <input type="text" class="form-control" id="gender" th:field="*{cus_gender}">-->
+        <!--            </div>-->
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="inputGroupSelect01">Gender</label>
+            </div>
+            <select class="custom-select" id="inputGroupSelect01">
+                <option value="true">Nam</option>
+                <option value="false">Nu</option>
+            </select>
+        </div>
+
+
+
+        <div class="form-control">
+            <label for="card">Id Card</label>
+            <input type="text" class="form-control" id="card" th:field="*{cus_id_card}">
+        </div>
+        <div class="form-control">
+            <label for="phone">Phone</label>
+            <input type="text" class="form-control" id="phone" th:field="*{cus_phone}">
+        </div>
+        <div class="form-control">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" th:field="*{cus_email}">
+        </div>
+        <div class="form-control">
+            <label for="address">Address</label>
+            <input type="text" class="form-control" id="address" th:field="*{cus_address}">
+        </div>
+        <div class="form-control">
+            <label>Type Customer</label>
+            <select class="form-control" th:field="*{customer_type_id}">
+                <option th:each="type : ${typeCustomer}" th:value="${type.customer_type_id}" th:text="${type.customer_type_name}"></option>
+            </select>
+        </div>
+
+        <div class="form-control">
+            <div class="row">
+                <div class="col">
+                    <button type="submit" class="btn btn-info">Edit customer</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <a th:href="@{/customer}">Back to menu</a>
+                </div>
+            </div>
+        </div>
+
+    </form>
+</div>
+<th:block th:insert="layout::js">
+
+</th:block>
+</body>
+</html>

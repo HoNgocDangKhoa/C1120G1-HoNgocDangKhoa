@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:insert="layout::head">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>View Blog</h1>
+<div class="form-control">
+    <form  th:object="${view}">
+        <div class="form-control">
+            <p>id</p>
+            <label>
+                <input type="text" th:field="*{cus_id}" disabled>
+            </label>
+        </div>
+        <div class="form-control">
+            <p>Name</p>
+            <label>
+                <input type="text" th:field="*{cus_name}" disabled>
+            </label>
+        </div>
+        <div class="form-control">
+            <p>Birth Day</p>
+            <label>
+                <input type="text" th:field="*{cus_birthDay}" disabled>
+            </label>
+        </div>
+        <div class="form-control">
+            <p>Gender</p>
+            <label>
+                <input type="text" th:field="*{cus_gender}" disabled>
+            </label>
+        </div>
+        <div class="form-control">
+            <p>Id Card</p>
+            <label>
+                <input type="text" th:field="*{cus_id_card}" disabled>
+            </label>
+        </div>
+        <div class="form-control">
+            <p>Phone</p>
+            <label>
+                <input type="text" th:field="*{cus_phone}" disabled>
+            </label>
+        </div>
+        <div class="form-control">
+            <p>Email</p>
+            <label>
+                <input type="email" th:field="*{cus_email}" disabled>
+            </label>
+        </div>
+        <div class="form-control">
+            <p>Address</p>
+            <label>
+                <input type="text" th:field="*{cus_address}" disabled>
+            </label>
+        </div>
+        <div class="form-control">
+            <p>Type Customer</p>
+            <label>
+                <input type="text" th:field="*{customer_type_id.customer_type_name}" disabled>
+            </label>
+        </div>
+
+    </form>
+    <div>
+        <a th:href="@{/customer}">Back to menu</a>
+    </div>
+</div>
+
+<th:block th:insert="layout::js">
+</th:block>
+</body>
+</html>
