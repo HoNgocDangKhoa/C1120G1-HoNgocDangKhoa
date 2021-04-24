@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head th:insert="/layout::head">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container-fluid">
+    <h1>List Contract Detail</h1>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">Id Contract</th>
+            <th scope="col">Id ContractDetail</th>
+            <th scope="col">Attach Service</th>
+            <th scope="col">Quantity</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="detail,row:${contractDetail}">
+            <td th:if="${row.first}" th:text="${detail.contract.contractId}"></td>
+            <td th:if="${!row.first}"></td>
+            <td th:text="${detail.contractDetailId}"></td>
+            <td th:text="${detail.attachService.attachServiceName}"></td>
+            <td th:text="${detail.quantity}"></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <a th:href="@{/contract}">
+        Back to list contract
+    </a>
+    <!--    <div>-->
+    <!--        <nav aria-label="Page navigation example">-->
+    <!--            <ul class="pagination">-->
+    <!--                <li class="page-item"><a class="page-link" th:href="@{'/contractDetail'(page=${contractDetail.number - 1})}"-->
+    <!--                                         th:if="${contractDetail.hasPrevious()}">Previous</a></li>-->
+    <!--                <li class="page-item" th:each="i: ${#numbers.sequence(0, contractDetail.totalPages - 1)}">-->
+    <!--                    <a class="page-link" th:href="@{/contractDetail(page = ${i})}"-->
+    <!--                       th:text="${i + 1}"></a>-->
+    <!--                </li>-->
+    <!--                <li class="page-item"><a class="page-link" th:href="@{'/contractDetail'(page=${contractDetail.number + 1})}"-->
+    <!--                                         th:if="${contractDetail.hasNext()}">Next</a></li>-->
+    <!--            </ul>-->
+    <!--        </nav>-->
+
+    <!--        <a th:href="@{'/employee'(page=${listEmployee.number - 1})}" th:if="${listEmployee.hasPrevious()}">Previous</a>-->
+    <!--        <span th:text="${listEmployee.number + 1}"></span>/<span th:text="${listEmployee.totalPages}"></span>-->
+    <!--        <a th:href="@{'/employee'(page=${listEmployee.number + 1})}" th:if="${listEmployee.hasNext()}">Next</a>-->
+</div>
+
+
+</div>
+</body>
+</html>

@@ -7,61 +7,61 @@ import java.util.Set;
 public class AttachService {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer attach_service_id;
+    private Integer attachServiceId;
 
     @Column(name = "attach_service_name", columnDefinition = "VARCHAR(45) NOT NULL")
-    private String attach_service_name;
+    private String attachServiceName;
 
     @Column(name = "attach_service_cost")
-    private double attach_service_cost;
+    private double attachServiceCost;
 
     @Column(name = "attach_service_unit")
-    private Integer attach_service_unit;
+    private Integer attachServiceUnit;
 
     @Column(name = "attach_service_status", columnDefinition = "VARCHAR(45) NOT NULL")
-    private String attach_service_status;
+    private String attachServiceStatus;
 
     @OneToMany(mappedBy = "attachService")
     private Set<ContractDetail> contractDetailSet;
 
-    public Integer getAttach_service_id() {
-        return attach_service_id;
+    public Integer getAttachServiceId() {
+        return attachServiceId;
     }
 
-    public void setAttach_service_id(Integer attach_service_id) {
-        this.attach_service_id = attach_service_id;
+    public void setAttachServiceId(Integer attachServiceId) {
+        this.attachServiceId = attachServiceId;
     }
 
-    public String getAttach_service_name() {
-        return attach_service_name;
+    public String getAttachServiceName() {
+        return attachServiceName;
     }
 
-    public void setAttach_service_name(String attach_service_name) {
-        this.attach_service_name = attach_service_name;
+    public void setAttachServiceName(String attachServiceName) {
+        this.attachServiceName = attachServiceName;
     }
 
-    public double getAttach_service_cost() {
-        return attach_service_cost;
+    public double getAttachServiceCost() {
+        return attachServiceCost;
     }
 
-    public void setAttach_service_cost(double attach_service_cost) {
-        this.attach_service_cost = attach_service_cost;
+    public void setAttachServiceCost(double attachServiceCost) {
+        this.attachServiceCost = attachServiceCost;
     }
 
-    public Integer getAttach_service_unit() {
-        return attach_service_unit;
+    public Integer getAttachServiceUnit() {
+        return attachServiceUnit;
     }
 
-    public void setAttach_service_unit(Integer attach_service_unit) {
-        this.attach_service_unit = attach_service_unit;
+    public void setAttachServiceUnit(Integer attachServiceUnit) {
+        this.attachServiceUnit = attachServiceUnit;
     }
 
-    public String getAttach_service_status() {
-        return attach_service_status;
+    public String getAttachServiceStatus() {
+        return attachServiceStatus;
     }
 
-    public void setAttach_service_status(String attach_service_status) {
-        this.attach_service_status = attach_service_status;
+    public void setAttachServiceStatus(String attachServiceStatus) {
+        this.attachServiceStatus = attachServiceStatus;
     }
 
     public Set<ContractDetail> getContractDetailSet() {

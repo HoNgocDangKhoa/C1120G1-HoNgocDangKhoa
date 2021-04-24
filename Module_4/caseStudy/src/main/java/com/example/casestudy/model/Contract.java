@@ -8,19 +8,19 @@ public class Contract {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "contract_id")
-    private Integer contract_id;
+    private Integer contractId;
 
     @Column(name = "contract_start_date" , columnDefinition = "DATE NOT NULL")
-    private String contract_start_date;
+    private String contractStartDate;
 
     @Column(name = "contract_end_date" , columnDefinition = "DATE")
-    private String contract_end_date;
+    private String contractEndDate;
 
     @Column(name = "contract_deposit")
-    private double contract_deposit;
+    private double contractDeposit;
 
     @Column(name = "contract_total_money")
-    private double contract_total_money;
+    private double contractTotalMoney;
 
     @ManyToOne
     @JoinColumn(name = "customer_id", nullable = false)
@@ -28,53 +28,53 @@ public class Contract {
 
     @ManyToOne
     @JoinColumn(name="service_id",nullable = false)
-    private Service service;
+    private FuramaService furamaService;
 
     @ManyToOne
     @JoinColumn(name="employee_id" , nullable = false)
     private Employee employee;
 
     @OneToMany(mappedBy = "contract")
-    private Set<ContractDetail>contractDetailSet;
+    private Set<ContractDetail> contractDetailSet;
 
-    public Integer getContract_id() {
-        return contract_id;
+    public Integer getContractId() {
+        return contractId;
     }
 
-    public void setContract_id(Integer contract_id) {
-        this.contract_id = contract_id;
+    public void setContractId(Integer contractId) {
+        this.contractId = contractId;
     }
 
-    public String getContract_start_date() {
-        return contract_start_date;
+    public String getContractStartDate() {
+        return contractStartDate;
     }
 
-    public void setContract_start_date(String contract_start_date) {
-        this.contract_start_date = contract_start_date;
+    public void setContractStartDate(String contractStartDate) {
+        this.contractStartDate = contractStartDate;
     }
 
-    public String getContract_end_date() {
-        return contract_end_date;
+    public String getContractEndDate() {
+        return contractEndDate;
     }
 
-    public void setContract_end_date(String contract_end_date) {
-        this.contract_end_date = contract_end_date;
+    public void setContractEndDate(String contractEndDate) {
+        this.contractEndDate = contractEndDate;
     }
 
-    public double getContract_deposit() {
-        return contract_deposit;
+    public double getContractDeposit() {
+        return contractDeposit;
     }
 
-    public void setContract_deposit(double contract_deposit) {
-        this.contract_deposit = contract_deposit;
+    public void setContractDeposit(double contractDeposit) {
+        this.contractDeposit = contractDeposit;
     }
 
-    public double getContract_total_money() {
-        return contract_total_money;
+    public double getContractTotalMoney() {
+        return contractTotalMoney;
     }
 
-    public void setContract_total_money(double contract_total_money) {
-        this.contract_total_money = contract_total_money;
+    public void setContractTotalMoney(double contractTotalMoney) {
+        this.contractTotalMoney = contractTotalMoney;
     }
 
     public Customer getCustomer() {
@@ -85,12 +85,12 @@ public class Contract {
         this.customer = customer;
     }
 
-    public Service getService() {
-        return service;
+    public FuramaService getFuramaService() {
+        return furamaService;
     }
 
-    public void setService(Service service) {
-        this.service = service;
+    public void setFuramaService(FuramaService furamaService) {
+        this.furamaService = furamaService;
     }
 
     public Employee getEmployee() {

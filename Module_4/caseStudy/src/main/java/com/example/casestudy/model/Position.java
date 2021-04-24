@@ -7,28 +7,28 @@ import java.util.Set;
 public class Position {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
-    private Integer position_id;
+    private Integer positionId;
 
     @Column(name = "position_name",columnDefinition = "VARCHAR(45) NOT NULL")
-    private String position_name;
+    private String positionName;
 
     @OneToMany(mappedBy = "position")
     private Set<Employee> employeeSet;
 
-    public Integer getPosition_id() {
-        return position_id;
+    public Integer getPositionId() {
+        return positionId;
     }
 
-    public void setPosition_id(Integer position_id) {
-        this.position_id = position_id;
+    public void setPositionId(Integer positionId) {
+        this.positionId = positionId;
     }
 
-    public String getPosition_name() {
-        return position_name;
+    public String getPositionName() {
+        return positionName;
     }
 
-    public void setPosition_name(String position_name) {
-        this.position_name = position_name;
+    public void setPositionName(String positionName) {
+        this.positionName = positionName;
     }
 
     public Set<Employee> getEmployeeSet() {

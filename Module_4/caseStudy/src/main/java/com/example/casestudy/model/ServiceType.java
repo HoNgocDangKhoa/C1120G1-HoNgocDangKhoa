@@ -8,36 +8,36 @@ public class ServiceType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="service_type_id")
-    private Integer service_type_id;
+    private Integer serviceTypeId;
 
     @Column(name="service_type_name" ,columnDefinition = "VARCHAR(45) NOT NULL")
-    private String service_type_name;
+    private String serviceTypeName;
 
     @OneToMany(mappedBy = "serviceType")
-    private Set<Service> serviceSet;
+    private Set<FuramaService> furamaServiceSet;
 
-    public Integer getService_type_id() {
-        return service_type_id;
+    public Integer getServiceTypeId() {
+        return serviceTypeId;
     }
 
-    public void setService_type_id(Integer service_type_id) {
-        this.service_type_id = service_type_id;
+    public void setServiceTypeId(Integer serviceTypeId) {
+        this.serviceTypeId = serviceTypeId;
     }
 
-    public String getService_type_name() {
-        return service_type_name;
+    public String getServiceTypeName() {
+        return serviceTypeName;
     }
 
-    public void setService_type_name(String service_type_name) {
-        this.service_type_name = service_type_name;
+    public void setServiceTypeName(String serviceTypeName) {
+        this.serviceTypeName = serviceTypeName;
     }
 
-    public Set<Service> getServiceSet() {
-        return serviceSet;
+    public Set<FuramaService> getFuramaServiceSet() {
+        return furamaServiceSet;
     }
 
-    public void setServiceSet(Set<Service> serviceSet) {
-        this.serviceSet = serviceSet;
+    public void setFuramaServiceSet(Set<FuramaService> furamaServiceSet) {
+        this.furamaServiceSet = furamaServiceSet;
     }
 
     public ServiceType() {

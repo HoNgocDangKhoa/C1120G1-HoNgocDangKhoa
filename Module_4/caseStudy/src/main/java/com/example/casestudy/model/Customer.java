@@ -1,40 +1,49 @@
 package com.example.casestudy.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
 import java.util.Set;
 
 @Entity
 public class Customer {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "customer_id")
-    private Integer cus_id;
+    @NotBlank(message = "ID customer not null")
+    @Pattern(regexp = "^KH-[0-9]{4}$", message = "must be in correct KH-xxxx format")
+    private String customerId;
 
 
     @Column(name = "customer_name", columnDefinition = "VARCHAR(45) NOT NULL")
-    private String cus_name;
+    private String customerName;
 
     @Column(name = "customer_birthDay", columnDefinition = "DATE")
-    private String cus_birthDay;
+    private String customerBirthDay;
 
     @Column(name = "customer_gender")
-    private boolean cus_gender;
+    private boolean customerGender;
 
     @Column(name = "customer_id_card", columnDefinition = "VARCHAR(45) NOT NULL")
-    private String cus_id_card;
+    @NotBlank(message = "not null")
+    @Pattern(regexp = "^([0-9]{9}|[0-9]{12})$",message = "phải đúng định dạng XXXXXXXXX hoặc XXXXXXXXXXXX ")
+    private String customerIdCard;
 
+    @NotBlank(message = "not null")
+    @Pattern(regexp = "^(0|\\(84\\)\\+)(90|91)[\\d]{7}$",message = " phai dung theo 090xxxxxxx hoặc 091xxxxxxx hoặc (84)+90xxxxxxx hoặc (84)+91xxxxxxx")
     @Column(name = "customer_phone", columnDefinition = "VARCHAR(45) NOT NULL")
-    private String cus_phone;
+    private String customerPhone;
 
     @Column(name = "customer_email", columnDefinition = "VARCHAR(45) NOT NULL")
-    private String cus_email;
+    @Email(message = "phai dung dinh dang abc@abc.com")
+    private String CustomerEmail;
 
     @Column(name = "customer_address", columnDefinition = "VARCHAR(255) NOT NULL")
-    private String cus_address;
+    private String customerAddress;
 
     @ManyToOne
     @JoinColumn(name = "customer_type_id", nullable = false)
-    private CustomerType customer_type_id;
+    private CustomerType customerTypeId;
 
 
     @OneToMany(mappedBy = "customer")
@@ -43,76 +52,76 @@ public class Customer {
     public Customer() {
     }
 
-    public Integer getCus_id() {
-        return cus_id;
+    public String getCustomerId() {
+        return customerId;
     }
 
-    public void setCus_id(Integer cus_id) {
-        this.cus_id = cus_id;
+    public void setCustomerId(String customerId) {
+        this.customerId = customerId;
     }
 
-    public String getCus_name() {
-        return cus_name;
+    public String getCustomerName() {
+        return customerName;
     }
 
-    public void setCus_name(String cus_name) {
-        this.cus_name = cus_name;
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
     }
 
-    public String getCus_birthDay() {
-        return cus_birthDay;
+    public String getCustomerBirthDay() {
+        return customerBirthDay;
     }
 
-    public void setCus_birthDay(String cus_birthDay) {
-        this.cus_birthDay = cus_birthDay;
+    public void setCustomerBirthDay(String customerBirthDay) {
+        this.customerBirthDay = customerBirthDay;
     }
 
-    public boolean isCus_gender() {
-        return cus_gender;
+    public boolean isCustomerGender() {
+        return customerGender;
     }
 
-    public void setCus_gender(boolean cus_gender) {
-        this.cus_gender = cus_gender;
+    public void setCustomerGender(boolean customerGender) {
+        this.customerGender = customerGender;
     }
 
-    public String getCus_id_card() {
-        return cus_id_card;
+    public String getCustomerIdCard() {
+        return customerIdCard;
     }
 
-    public void setCus_id_card(String cus_id_card) {
-        this.cus_id_card = cus_id_card;
+    public void setCustomerIdCard(String customerIdCard) {
+        this.customerIdCard = customerIdCard;
     }
 
-    public String getCus_phone() {
-        return cus_phone;
+    public String getCustomerPhone() {
+        return customerPhone;
     }
 
-    public void setCus_phone(String cus_phone) {
-        this.cus_phone = cus_phone;
+    public void setCustomerPhone(String customerPhone) {
+        this.customerPhone = customerPhone;
     }
 
-    public String getCus_email() {
-        return cus_email;
+    public String getCustomerAddress() {
+        return customerAddress;
     }
 
-    public void setCus_email(String cus_email) {
-        this.cus_email = cus_email;
+    public void setCustomerAddress(String customerAddress) {
+        this.customerAddress = customerAddress;
     }
 
-    public String getCus_address() {
-        return cus_address;
+    public String getCustomerEmail() {
+        return CustomerEmail;
     }
 
-    public void setCus_address(String cus_address) {
-        this.cus_address = cus_address;
+    public void setCustomerEmail(String customerEmail) {
+        CustomerEmail = customerEmail;
     }
 
-    public CustomerType getCustomer_type_id() {
-        return customer_type_id;
+    public CustomerType getCustomerTypeId() {
+        return customerTypeId;
     }
 
-    public void setCustomer_type_id(CustomerType customer_type_id) {
-        this.customer_type_id = customer_type_id;
+    public void setCustomerTypeId(CustomerType customerTypeId) {
+        this.customerTypeId = customerTypeId;
     }
 
     public Set<Contract> getContractSet() {

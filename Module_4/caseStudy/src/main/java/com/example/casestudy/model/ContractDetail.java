@@ -6,7 +6,7 @@ import javax.persistence.*;
 public class ContractDetail {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private  Integer contract_detail_id;
+    private  Integer contractDetailId;
 
     @ManyToOne
     @JoinColumn(name="contract_id",nullable = false)
@@ -16,15 +16,14 @@ public class ContractDetail {
     @JoinColumn(name="attach_service_id" , nullable = false)
     private AttachService attachService;
 
-    @JoinColumn(name="attach_service_id")
     private  Integer quantity;
 
-    public Integer getContract_detail_id() {
-        return contract_detail_id;
+    public Integer getContractDetailId() {
+        return contractDetailId;
     }
 
-    public void setContract_detail_id(Integer contract_detail_id) {
-        this.contract_detail_id = contract_detail_id;
+    public void setContractDetailId(Integer contractDetailId) {
+        this.contractDetailId = contractDetailId;
     }
 
     public Contract getContract() {

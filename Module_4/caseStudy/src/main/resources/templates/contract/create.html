@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:insert="layout::head">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container">
+    <h3>Add new Contract</h3>
+
+    <form th:action="@{/contract/create}" method="post" th:object="${contract}">
+        <input type="hidden" th:field="*{contractId}"/>
+        <table class="table table-hover">
+            <thead></thead>
+            <tbody>
+            <tr>
+                <td>ContractStartDate</td>
+                <td>
+                    <input type="date" class="form-control" th:field="*{contractStartDate}">
+                </td>
+            </tr>
+            <tr>
+                <td>ContractEndDate</td>
+                <td>
+                    <input type="date" class="form-control" th:field="*{contractEndDate}">
+                </td>
+            </tr>
+
+            <tr>
+                <td>Customer</td>
+                <td>
+                    <select class="form-control" th:field="*{customer}">
+                        <option th:each="type : ${customer}" th:value="${type.customerId}"
+                                th:text="${type.customerName}"></option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Employee</td>
+                <td>
+                    <select class="form-control" th:field="*{employee}">
+                        <option th:each="type : ${employee}" th:value="${type.employeeId}"
+                                th:text="${type.employeeName}"></option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Service</td>
+                <td>
+                    <select class="form-control" th:field="*{furamaService}">
+                        <option th:each="type : ${service}" th:value="${type.serviceId}"
+                                th:text="${type.serviceType.serviceTypeName}"></option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>ContractDeposit</td>
+                <td>
+                    <input type="text" class="form-control" th:field="*{contractDeposit}">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="submit" class="btn btn-info">Add Contract</button>
+                </td>
+                <td>
+                    <a th:href="@{/contract}">Back to menu</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </form>
+    <th:block th:insert="layout::js">
+
+    </th:block>
+</div>
+</body>
+</html>

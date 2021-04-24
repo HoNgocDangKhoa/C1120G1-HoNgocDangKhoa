@@ -5,16 +5,19 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
 import javax.persistence.criteria.CriteriaBuilder;
+import java.util.List;
 
 public interface CustomerService {
     Page<Customer> findAll(Pageable pageable);
 
     void save(Customer customer);
 
-    void remove(Integer id);
+    void remove(String id);
 
-    Customer findById(Integer id);
+    Customer findById(String id);
 
-    Page<Customer> findAllByCus_name(String keyword,Pageable pageable);
+    Page<Customer> findCustomerByCustomerNameContaining(String keyword,Pageable pageable);
+
+    List<Customer>findAllCustomer();
 
 }

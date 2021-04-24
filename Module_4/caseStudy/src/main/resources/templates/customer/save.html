@@ -5,60 +5,60 @@
     <title>Title</title>
 </head>
 <body>
-<h3>Add Product</h3>
-<p>
-    <a th:href="@{/customer}">
-        Back to product list
-    </a>
-</p>
+<div class="container">
+    <h3>Add Product</h3>
+    <p>
+        <a th:href="@{/customer}">
+            Back to customer list
+        </a>
+    </p>
 
-<div class="form-control">
-        <form th:action="@{/saveCustomer}" method="post" th:object="${saveCustomer}" novalidate="novalidate">
-            <input type="hidden" th:field="*{cus_id}"/>
+    <div class="form-control">
+        <form th:action="@{/saveCustomer}" method="post" th:object="${customer}" novalidate="novalidate">
+            <div class="form-control">
+                <label for="id">Id</label>
+                <input type="text" class="form-control" id="id" th:field="*{customerId}">
+                <p th:if="${#fields.hasErrors('customerId')}" th:errors="*{customerId}" style="color: #a71d2a"></p>
+            </div>
             <div class="form-control">
                 <label for="name">Name</label>
-                <input type="text" class="form-control" id="name" th:field="*{cus_name}">
+                <input type="text" class="form-control" id="name" th:field="*{customerName}">
             </div>
             <div class="form-control">
                 <label for="bday">BirthDay</label>
-                <input type="date" class="form-control" id="bday" th:field="*{cus_birthDay}">
+                <input type="date" class="form-control" id="bday" th:field="*{customerBirthDay}">
             </div>
-<!--            <div class="form-control">-->
-<!--                <label for="gender">Gender</label>-->
-<!--                <input type="text" class="form-control" id="gender" th:field="*{cus_gender}">-->
-<!--            </div>-->
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <label class="input-group-text" for="inputGroupSelect01">Gender</label>
-                </div>
-                <select class="custom-select" id="inputGroupSelect01">
-                    <option value="true">Nam</option>
-                    <option value="false">Nu</option>
+            <div >
+                <label>Gender</label>
+                <!--                <input type="text" class="form-control" id="gender" th:field="*{customerGender}">-->
+                <select class="form-control" th:field="*{customerGender}">
+                    <option value="true">Male</option>
+                    <option value="false">FeMale</option>
                 </select>
             </div>
-
-
-
             <div class="form-control">
                 <label for="card">Id Card</label>
-                <input type="text" class="form-control" id="card" th:field="*{cus_id_card}">
+                <input type="text" class="form-control" id="card" th:field="*{customerIdCard}">
+                <br><p th:if="${#fields.hasErrors('customerIdCard')}" th:errors="*{customerIdCard}" style="color: #a71d2a"></p>
             </div>
             <div class="form-control">
                 <label for="phone">Phone</label>
-                <input type="text" class="form-control" id="phone" th:field="*{cus_phone}">
+                <input type="text" class="form-control" id="phone" th:field="*{customerPhone}">
+                <br><p th:if="${#fields.hasErrors('customerPhone')}" th:errors="*{customerPhone}" style="color: #a71d2a"></p>
             </div>
             <div class="form-control">
                 <label for="email">Email</label>
-                <input type="email" class="form-control" id="email" th:field="*{cus_email}">
+                <input type="email" class="form-control" id="email" th:field="*{customerEmail}">
+                <br><p th:if="${#fields.hasErrors('customerEmail')}" th:errors="*{customerEmail}" style="color: #a71d2a"></p>
             </div>
             <div class="form-control">
                 <label for="address">Address</label>
-                <input type="text" class="form-control" id="address" th:field="*{cus_address}">
+                <input type="text" class="form-control" id="address" th:field="*{customerAddress}">
             </div>
             <div class="form-control">
                 <label>Type Customer</label>
-                <select class="form-control" th:field="*{customer_type_id}">
-                    <option th:each="type : ${typeCustomer}" th:value="${type.customer_type_id}" th:text="${type.customer_type_name}"></option>
+                <select class="form-control" th:field="*{customerTypeId}">
+                    <option th:each="type : ${typeCustomer}" th:value="${type.customerTypeId}" th:text="${type.customerTypeName}"></option>
                 </select>
             </div>
 
@@ -77,8 +77,9 @@
 
         </form>
     </div>
-<th:block th:insert="layout::js">
+    <th:block th:insert="layout::js">
 
-</th:block>
+    </th:block>
+</div>
 </body>
 </html>

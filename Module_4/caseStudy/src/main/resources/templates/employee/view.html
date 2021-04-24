@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:insert="layout::head">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container">
+    <h3>View</h3>
+    <p>
+        <a th:href="@{/employee}">
+            Back to employee list
+        </a>
+    </p>
+    <form th:action="@{/employee/edit}" method="post" th:object="${view}">
+<!--        <input type="hidden" th:field="*{employeeId}"/>-->
+        <table class="table table-hover">
+            <thead></thead>
+            <tbody>
+            <tr>
+                <td>Id</td>
+                <td>
+                    <input type="text" class="form-control" th:field="*{employeeId}" disabled>
+                </td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td>
+                    <input type="text" class="form-control" th:field="*{employeeName}" disabled>
+                </td>
+            </tr>
+            <tr>
+                <td>Birth Day</td>
+                <td>
+                    <input type="date" class="form-control" th:field="*{employeeBirthday}" disabled>
+                </td>
+            </tr>
+            <tr>
+                <td>Id Card</td>
+                <td>
+                    <input type="text" class="form-control" th:field="*{employeeIdCard}" disabled>
+                </td>
+            </tr>
+            <tr>
+                <td>Phone</td>
+                <td>
+                    <input type="text" class="form-control" th:field="*{employeePhone}" disabled>
+                </td>
+            </tr>            <tr>
+                <td>Salary</td>
+                <td>
+                    <input type="text" class="form-control" th:field="*{employeeSalary}" disabled>
+                </td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>
+                    <input type="email" class="form-control" th:field="*{employeeEmail}" disabled>
+                </td>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <td>
+                    <input type="text" class="form-control" th:field="*{employeeAddress}" disabled>
+                </td>
+            </tr>
+            <tr>
+                <td>Position</td>
+                <td>
+                    <input type="text" class="form-control" th:field="*{position}" disabled>
+                </td>
+            </tr>
+            <tr>
+                <td>Education</td>
+                <td>
+                    <input type="text" class="form-control" th:field="*{educationDegree}" disabled>
+<!--                    <select class="form-control" th:field="*{educationDegree}">-->
+<!--                        <option th:each="type : ${education}" th:value="${type.educationDegreeId}"-->
+<!--                                th:text="${type.educationDegreeName}"></option>-->
+<!--                    </select>-->
+                </td>
+            </tr>
+            <tr>
+                <td>Division</td>
+                <td>
+                    <input type="text" class="form-control" th:field="*{division}" disabled>
+<!--                    <select class="form-control" th:field="*{division}">-->
+<!--                        <option th:each="type : ${division}" th:value="${type.divisionId}"-->
+<!--                                th:text="${type.divisionName}"></option>-->
+<!--                    </select>-->
+                </td>
+            </tr>
+            <tr>
+                <td>User</td>
+                <td>
+                    <input type="text" class="form-control" th:field="*{user.userName}" disabled>
+
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </form>
+    <th:block th:insert="layout::js">
+
+    </th:block>
+</div>
+</body>
+</html>

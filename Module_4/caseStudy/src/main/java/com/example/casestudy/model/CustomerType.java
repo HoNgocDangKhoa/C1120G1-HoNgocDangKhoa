@@ -8,32 +8,32 @@ public class CustomerType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @JoinColumn(name="customer_type_id")
-    private Integer customer_type_id;
+    private Integer customerTypeId;
 
     @Column(name = "customer_type_name", columnDefinition = "VARCHAR(45) NOT NULL")
-    private String customer_type_name;
+    private String customerTypeName;
 
-    @OneToMany(mappedBy = "customer_type_id",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "customerTypeId",cascade = CascadeType.ALL)
     private Set<Customer> customerSet;
 
     public CustomerType() {
     }
 
 
-    public Integer getCustomer_type_id() {
-        return customer_type_id;
+    public Integer getCustomerTypeId() {
+        return customerTypeId;
     }
 
-    public void setCustomer_type_id(Integer customer_type_id) {
-        this.customer_type_id = customer_type_id;
+    public void setCustomerTypeId(Integer customer_type_id) {
+        this.customerTypeId = customer_type_id;
     }
 
-    public String getCustomer_type_name() {
-        return customer_type_name;
+    public String getCustomerTypeName() {
+        return customerTypeName;
     }
 
-    public void setCustomer_type_name(String customer_type_name) {
-        this.customer_type_name = customer_type_name;
+    public void setCustomerTypeName(String customer_type_name) {
+        this.customerTypeName = customer_type_name;
     }
 
     public Set<Customer> getCustomerSet() {

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head th:insert="/layout::head">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container-fluid">
+    <h1>List Employee</h1>
+    <h4><a th:href="@{/employee/save}">Add new Employee</a></h4>
+    <form class="form-inline my-2 my-lg-0" th:action="@{/employee/search}" method=get>
+        <input class="form-control mr-sm-2" type="text" placeholder="Search" name="keyword"/>
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Birth Day</th>
+            <th scope="col">Id Card</th>
+            <th scope="col">Salary</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Email</th>
+            <th scope="col">Address</th>
+            <th scope="col">Position</th>
+            <th scope="col">EducationDegree</th>
+            <th scope="col">Division</th>
+            <th scope="col">User</th>
+            <th scope="col">Option</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="employee:${listEmployee}">
+            <td th:text="${employee.employeeId}">/td>
+            <td th:text="${employee.employeeName}">/td>
+            <td th:text="${employee.employeeBirthday}">/td>
+            <td th:text=" ${employee.employeeIdCard}"></td>
+            <td th:text= "${employee.employeeSalary}"></td>
+            <td th:text="${employee.employeePhone}"></td>
+            <td th:text="${employee.employeeEmail}">/td>
+            <td th:text="${employee.employeeAddress}">/td>
+            <td th:text="${employee.position.positionName}">/td>
+            <td th:text="${employee.educationDegree.educationDegreeName}">/td>
+            <td th:text="${employee.division.divisionName}">/td>
+            <td th:text="${employee.user.userName}">/td
+            <td>
+                <a class="btn btn-primary" th:href="@{/employee/edit(id=${employee.employeeId})}">Edit <i
+                        class="fas fa-edit"></i></a>
+
+                <a>
+                    <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal"
+                            th:onclick="|setIdToDeleteForm('${employee.employeeId}')|">Delete <i class="fas fa-trash"></i>
+                    </button>
+                </a>
+                <a class="btn btn-danger" th:href="@{/employee/view(id=${employee.employeeId})}">View <i class="fas fa-eye"></i></a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <p>
+        <a th:href="@{/}">
+            Back to menu
+        </a>
+    </p>
+    <div>
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                <li class="page-item"><a class="page-link" th:href="@{'/employee'(page=${listEmployee.number - 1})}"
+                                         th:if="${listEmployee.hasPrevious()}">Previous</a></li>
+                <li class="page-item" th:each="i: ${#numbers.sequence(0, listEmployee.totalPages - 1)}">
+                    <a class="page-link" th:href="@{/customer(page = ${i})}"
+                       th:text="${i + 1}"></a>
+                </li>
+                <li class="page-item"><a class="page-link" th:href="@{'/employee'(page=${listEmployee.number + 1})}"
+                                         th:if="${listEmployee.hasNext()}">Next</a></li>
+            </ul>
+        </nav>
+
+<!--        <a th:href="@{'/employee'(page=${listEmployee.number - 1})}" th:if="${listEmployee.hasPrevious()}">Previous</a>-->
+<!--        <span th:text="${listEmployee.number + 1}"></span>/<span th:text="${listEmployee.totalPages}"></span>-->
+<!--        <a th:href="@{'/employee'(page=${listEmployee.number + 1})}" th:if="${listEmployee.hasNext()}">Next</a>-->
+    </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Delete modal</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"></span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h4>Are you sure to delete this Employee?</h4>
+                </div>
+                <div class="modal-footer">
+                    <form th:action="@{/employee/delete}" method="get" >
+                        <input type="hidden" name="id" id="id">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Delete</button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <th:block th:insert="/layout::js">
+    </th:block>
+    <script>
+        function setIdToDeleteForm(id) {
+            //id này chính là id của phần tử input trong form delete
+            document.getElementById("id").value = id;
+        }
+    </script>
+</div>
+</body>
+</html>

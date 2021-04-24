@@ -7,28 +7,28 @@ import java.util.Set;
 public class Division {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private  Integer division_id;
+    private Integer divisionId;
 
-    @Column(name = "division_name" , columnDefinition = "VARCHAR(45) NOT NULL")
-    private  Integer division_name;
+    @Column(name = "division_name", columnDefinition = "VARCHAR(45) NOT NULL")
+    private String divisionName;
 
     @OneToMany(mappedBy = "division")
     private Set<Employee> employeeSet;
 
-    public Integer getDivision_id() {
-        return division_id;
+    public Integer getDivisionId() {
+        return divisionId;
     }
 
-    public void setDivision_id(Integer division_id) {
-        this.division_id = division_id;
+    public void setDivisionId(Integer divisionId) {
+        this.divisionId = divisionId;
     }
 
-    public Integer getDivision_name() {
-        return division_name;
+    public String getDivisionName() {
+        return divisionName;
     }
 
-    public void setDivision_name(Integer division_name) {
-        this.division_name = division_name;
+    public void setDivisionName(String divisionName) {
+        this.divisionName = divisionName;
     }
 
     public Set<Employee> getEmployeeSet() {

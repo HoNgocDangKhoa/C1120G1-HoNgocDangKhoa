@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:insert="layout::head">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container">
+    <h3>Add new Employee</h3>
+    <p>
+        <a th:href="@{/employee}">
+            Back to employee list
+        </a>
+    </p>
+    <form th:action="@{/employee/save}" method="post" th:object="${employee}">
+        <input type="hidden" th:field="*{employeeId}"/>
+        <table class="table table-hover">
+            <thead></thead>
+            <tbody>
+            <tr>
+                <td>Name</td>
+                <td>
+                    <input type="text" class="form-control" th:field="*{employeeName}">
+                </td>
+            </tr>
+            <tr>
+                <td>Birth Day</td>
+                <td>
+                    <input type="date" class="form-control" th:field="*{employeeBirthday}">
+                </td>
+            </tr>
+            <tr>
+                <td>Id Card</td>
+                <td>
+                    <input type="text" class="form-control" th:field="*{employeeIdCard}">
+                </td>
+            </tr>
+            <tr>
+                <td>Phone</td>
+                <td>
+                    <input type="text" class="form-control" th:field="*{employeePhone}">
+                    <br><p th:if="${#fields.hasErrors('employeePhone')}" th:errors="*{employeePhone}" style="color: #a71d2a"></p>
+                </td>
+            </tr>            <tr>
+                <td>Salary</td>
+                <td>
+                    <input type="text" class="form-control" th:field="*{employeeSalary}">
+                </td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>
+                    <input type="text" class="form-control" th:field="*{employeeEmail}">
+                </td>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <td>
+                    <input type="text" class="form-control" th:field="*{employeeAddress}">
+                </td>
+            </tr>
+            <tr>
+                <td>Position</td>
+                <td>
+                    <select class="form-control" th:field="*{position}">
+                        <option th:each="type : ${position}" th:value="${type.positionId}"
+                                th:text="${type.positionName}"></option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Education</td>
+                <td>
+                    <select class="form-control" th:field="*{educationDegree}">
+                        <option th:each="type : ${education}" th:value="${type.educationDegreeId}"
+                                th:text="${type.educationDegreeName}"></option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Division</td>
+                <td>
+                    <select class="form-control" th:field="*{division}">
+                        <option th:each="type : ${division}" th:value="${type.divisionId}"
+                                th:text="${type.divisionName}"></option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>User</td>
+                <td>
+                    <input type="hidden" class="form-control" th:object="${user}">
+                    <input type="text" class="form-control" th:field="*{user.userName}">
+                    <input type="text" class="form-control" th:field="*{user.password}">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="submit" class="btn btn-info">Add Employee</button>
+                </td>
+                <td>
+                    <a th:href="@{/employee}">Back to menu</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </form>
+    <th:block th:insert="layout::js">
+
+    </th:block>
+</div>
+</body>
+</html>

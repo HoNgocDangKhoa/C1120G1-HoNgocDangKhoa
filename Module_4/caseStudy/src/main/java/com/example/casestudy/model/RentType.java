@@ -8,46 +8,46 @@ public class RentType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="rent_type_id")
-    private Integer rent_type_id;
+    private Integer rentTypeId;
 
     @Column(name="rent_type_name",columnDefinition = "VARCHAR(45) NOT NULL")
-    private String rent_type_name;
+    private String rentTypeName;
 
     @Column(name="rent_type_cost" )
-    private double rent_type_cost;
+    private double rentTypeCost;
 
     @OneToMany(mappedBy = "rentType")
-    private Set<Service>typeRentSet;
+    private Set<FuramaService>typeRentSet;
 
-    public Integer getRent_type_id() {
-        return rent_type_id;
+    public Integer getRentTypeId() {
+        return rentTypeId;
     }
 
-    public void setRent_type_id(Integer rent_type_id) {
-        this.rent_type_id = rent_type_id;
+    public void setRentTypeId(Integer rentTypeId) {
+        this.rentTypeId = rentTypeId;
     }
 
-    public String getRent_type_name() {
-        return rent_type_name;
+    public String getRentTypeName() {
+        return rentTypeName;
     }
 
-    public void setRent_type_name(String rent_type_name) {
-        this.rent_type_name = rent_type_name;
+    public void setRentTypeName(String rentTypeName) {
+        this.rentTypeName = rentTypeName;
     }
 
-    public double getRent_type_cost() {
-        return rent_type_cost;
+    public double getRentTypeCost() {
+        return rentTypeCost;
     }
 
-    public void setRent_type_cost(double rent_type_cost) {
-        this.rent_type_cost = rent_type_cost;
+    public void setRentTypeCost(double rentTypeCost) {
+        this.rentTypeCost = rentTypeCost;
     }
 
-    public Set<Service> getTypeRentSet() {
+    public Set<FuramaService> getTypeRentSet() {
         return typeRentSet;
     }
 
-    public void setTypeRentSet(Set<Service> typeRentSet) {
+    public void setTypeRentSet(Set<FuramaService> typeRentSet) {
         this.typeRentSet = typeRentSet;
     }
 
